@@ -82,20 +82,20 @@
           `<div class="dt-row">${u.parts.filter(p => p !== id).map(p => icon(p, "sm")).join('<span class="op">+</span>')}<span class="op">→</span>${icon(u.result, "sm")}<span class="n">${esc(byId[u.result].name)}${u.parts.length > 2 ? ` (with ${u.parts.filter(p => p !== id).map(p => esc(byId[p].name)).join(", ")})` : ` (with ${esc(byId[u.parts.find(p => p !== id)].name)})`}</span></div>`
         ).join("")}</div>`
       : "";
-    const canAdd = currentView === "run";
+    const canAdd = currentView === "run" || currentView === "plan";
     $("#detailBody").innerHTML = `
       <div class="dt-head">${icon(id, "lg")}<div><h2>${esc(it.name)}</h2>
         <div style="display:flex;gap:6px;align-items:center;margin-top:4px">${tierBadge(it.tier)}
         <span class="tier">${it.kind === "ball" ? "Ball" : "Passive"}</span>${it.dlc ? '<span class="badge-dlc">Naturalist DLC</span>' : ""}</div></div></div>
       <div class="dt-desc">${prettyDesc(it.desc)}</div>${made}${used}
-      ${canAdd ? `<div class="dt-actions"><button class="btn" data-add="${esc(id)}">Add to run</button></div>` : ""}`;
+      ${canAdd ? `<div class="dt-actions"><button class="btn" data-add="${esc(id)}">${currentView === "plan" ? "Add as target" : "Add to run"}</button></div>` : ""}`;
     const dlg = $("#detail");
     if (!dlg.open) dlg.showModal();
   }
   $("#detail").addEventListener("click", e => {
     if (e.target === e.currentTarget) return e.currentTarget.close();
     const add = e.target.closest("[data-add]");
-    if (add) { addToRun(add.dataset.add); $("#detail").close(); return; }
+    if (add) { (currentView === "plan" ? addTarget : addToRun)(add.dataset.add); $("#detail").close(); return; }
     const ic = e.target.closest(".ico");
     if (ic) openDetail(ic.dataset.id);
   });
@@ -241,7 +241,7 @@
     const group = (cls, title, list) => list.length
       ? `<div class="evo-group ${cls}"><div class="gh">${title}<span class="count">${list.length}</span></div><div class="evo-list">${list.map(a => evoCard(a, usable)).join("")}</div></div>` : "";
     let html = group("ready", "Ready to evolve", ready) + group("one", "One away", one);
-    if (more.length) html += `<details class="more evo-group"><summary>Further away (${more.length})</summary><div class="evo-list">${more.map(a => evoCard(a, usable)).join("")}</div></details>`;
+    if (more.length) html += `<details class="more evo-group" open><summary>Further away (${more.length})</summary><div class="evo-list">${more.map(a => evoCard(a, usable)).join("")}</div></details>`;
     host.innerHTML = html || `<div class="empty-note">No evolutions left for this combination.</div>`;
   }
 
@@ -333,22 +333,30 @@
 
   // ---------- picker ----------
   let pick = null;
-  function openPicker(kind, slot) {
-    pick = { kind, slot };
-    $("#pkTitle").textContent = kind === "ball" ? "Choose a ball" : "Choose a passive";
+  function openPicker(kind, slot, mode = "run") {
+    pick = { kind, slot, mode };
+    $("#pkTitle").textContent = (mode === "plan" ? "Target " : "Choose a ") + (kind === "ball" ? "ball" : "passive");
     $("#pkQ").value = "";
     renderPicker();
     $("#picker").showModal();
     $("#pkQ").focus();
   }
   function renderPicker() {
-    const { kind, slot } = pick;
+    const { kind, slot, mode } = pick;
     const q = $("#pkQ").value.trim().toLowerCase();
-    const cur = run[kind][slot];
-    const held = allHeld(kind);
-    if (cur) cur.ids.forEach(i => held.delete(i));
-    const list = ITEMS.filter(i => i.kind === kind && dlcOk(i, opts.dlc) && (!q || i.name.toLowerCase().includes(q)));
-    const secs = [[0, "Base"], [1, "Tier 1 evolutions"], [2, "Tier 2 evolutions"], [3, "Tier 3 evolutions"]];
+    let held, dlc;
+    if (mode === "plan") {
+      held = new Set(plan[kind].filter((x, i) => x && i !== slot));
+      dlc = plan.dlc;
+    } else {
+      const cur = run[kind][slot];
+      held = allHeld(kind);
+      if (cur) cur.ids.forEach(i => held.delete(i));
+      dlc = opts.dlc;
+    }
+    const list = ITEMS.filter(i => i.kind === kind && dlcOk(i, dlc) && (!q || i.name.toLowerCase().includes(q)));
+    let secs = [[0, "Base"], [1, "Tier 1 evolutions"], [2, "Tier 2 evolutions"], [3, "Tier 3 evolutions"]];
+    if (mode === "plan") secs = secs.reverse();
     const html = secs.map(([t, label]) => {
       const xs = list.filter(i => i.tier === t);
       if (!xs.length) return "";
@@ -364,8 +372,13 @@
   });
   $("#pkBody").addEventListener("click", e => {
     const b = e.target.closest(".pk-item"); if (!b || b.disabled) return;
-    run[pick.kind][pick.slot] = null;
-    addToRun(b.dataset.id, pick.slot);
+    if (pick.mode === "plan") {
+      plan[pick.kind][pick.slot] = b.dataset.id;
+      savePlan(); renderPlan();
+    } else {
+      run[pick.kind][pick.slot] = null;
+      addToRun(b.dataset.id, pick.slot);
+    }
     $("#picker").close();
   });
   $("#picker").addEventListener("click", e => { if (e.target === e.currentTarget) e.currentTarget.close(); });
@@ -452,13 +465,235 @@
     $("#legend").innerHTML = html;
   }
 
+  // ---------- PLAN ----------
+  const plan = Object.assign(
+    { ballN: 4, passiveN: 4, ball: [], passive: [], dlc: true, overrides: {} },
+    store.get("plan", {})
+  );
+  for (const k of ["ball", "passive"]) {
+    plan[k] = Array.from({ length: plan[k + "N"] }, (_, i) => (plan[k][i] && byId[plan[k][i]]) ? plan[k][i] : null);
+  }
+  const savePlan = () => store.set("plan", plan);
+
+  // Peak slots needed to build something from parts built one after another:
+  // build the hungriest part first; finished parts sit in slots while the next is built.
+  function peakOf(parts) {
+    const ps = parts.map(p => p.peak).sort((a, b) => b - a);
+    return Math.max(parts.length, 0, ...ps.map((p, i) => i + p));
+  }
+  const better = (a, b) => a.pickups - b.pickups || a.peak - b.peak;
+
+  // All reasonable ways to build `id` from base items, best first.
+  function buildOptions(id, stack = []) {
+    const r = byId[id];
+    let recs = r.recipes.map((p, i) => ({ p, i }))
+      .filter(x => recipeDlcOk(x.p, plan.dlc) && !x.p.some(q => stack.includes(q) || q === id));
+    const ov = plan.overrides[id];
+    if (ov != null && recs.some(x => x.i === ov)) recs = recs.filter(x => x.i === ov);
+    if (!recs.length) return [{ id, base: true, pickups: 1, peak: 1 }];
+    const out = [];
+    for (const { p, i } of recs) {
+      let combos = [[]];
+      for (const q of p) {
+        const qo = buildOptions(q, [...stack, id]).slice(0, 3);
+        const next = [];
+        for (const c of combos) for (const o of qo) next.push([...c, o]);
+        combos = next.slice(0, 60);
+      }
+      for (const parts of combos) {
+        out.push({ id, recipe: i, parts, pickups: parts.reduce((s, x) => s + x.pickups, 0), peak: peakOf(parts) });
+      }
+    }
+    return out.sort(better).slice(0, 6);
+  }
+
+  function solve(kind) {
+    const targets = plan[kind].filter(Boolean);
+    const slots = plan[kind + "N"];
+    let combos = [[]];
+    for (const t of targets) {
+      const to = buildOptions(t).slice(0, 4);
+      const next = [];
+      for (const c of combos) for (const o of to) next.push([...c, o]);
+      combos = next.slice(0, 3000);
+    }
+    let best = null;
+    for (const c of combos) {
+      const peak = peakOf(c), pickups = c.reduce((s, x) => s + x.pickups, 0);
+      const over = peak > slots ? 1 : 0;
+      // prefer: fits in slots, then fewest pickups, then lowest peak
+      if (!best || (over - best.over || pickups - best.pickups || peak - best.peak) < 0) {
+        best = { opts: c, peak, pickups, over };
+      }
+    }
+    if (!best) return null;
+    // steps
+    const held = [], steps = [];
+    const emit = opt => {
+      if (opt.base) {
+        const dupe = held.includes(opt.id);
+        held.push(opt.id);
+        steps.push({ t: "pick", id: opt.id, held: [...held], dupe });
+        return;
+      }
+      [...opt.parts].sort((a, b) => b.peak - a.peak).forEach(emit);
+      for (const p of opt.parts) { const i = held.lastIndexOf(p.id); if (i >= 0) held.splice(i, 1); }
+      const dupe = held.includes(opt.id);
+      held.push(opt.id);
+      steps.push({ t: "evolve", id: opt.id, parts: opt.parts.map(p => p.id), held: [...held], dupe });
+    };
+    const ordered = [...best.opts].sort((a, b) => b.peak - a.peak);
+    for (const o of ordered) {
+      if (!o.base) steps.push({ t: "hdr", id: o.id });
+      emit(o);
+    }
+    // warnings
+    const warns = [];
+    if (best.over) warns.push(`At the busiest point this needs ${best.peak} ${kind} slots, but you have ${slots}. Fusing finished balls frees slots, or drop a target.`);
+    const dupes = [...new Set(steps.filter(s => s.dupe).map(s => byId[s.id].name))];
+    if (dupes.length) warns.push(`You'd need to hold two of ${dupes.join(", ")} at once. You can't hold duplicates, so build those targets at different times or pick a different recipe.`);
+    const inner = new Set();
+    const walk = (o, root) => { if (!root && targets.includes(o.id)) inner.add(o.id); (o.parts || []).forEach(p => walk(p, false)); };
+    best.opts.forEach(o => walk(o, true));
+    inner.forEach(id => warns.push(`${byId[id].name} gets used up making another target, so you'd have to build it twice.`));
+    return { ...best, steps, warns, slots, targets };
+  }
+
+  function addTarget(id) {
+    const kind = byId[id].kind;
+    if (plan[kind].includes(id)) return;
+    const i = plan[kind].findIndex(x => !x);
+    if (i < 0) return;
+    plan[kind][i] = id;
+    savePlan(); renderPlan();
+  }
+
+  for (const [sel, k] of [["#planBallN", "ballN"], ["#planPassiveN", "passiveN"]]) {
+    const el = $(sel);
+    el.innerHTML = [1, 2, 3, 4, 5, 6].map(n => `<option ${n === plan[k] ? "selected" : ""}>${n}</option>`).join("");
+    el.addEventListener("change", () => {
+      const kind = k === "ballN" ? "ball" : "passive";
+      plan[k] = +el.value;
+      plan[kind] = Array.from({ length: plan[k] }, (_, i) => plan[kind][i] || null);
+      savePlan(); renderPlan();
+    });
+  }
+  $("#planDlc").checked = plan.dlc;
+  $("#planDlc").addEventListener("change", e => { plan.dlc = e.target.checked; savePlan(); renderPlan(); });
+  $("#planReset").addEventListener("click", () => {
+    plan.ball = plan.ball.map(() => null); plan.passive = plan.passive.map(() => null); plan.overrides = {};
+    savePlan(); renderPlan();
+  });
+
+  function renderPlanSlots(kind) {
+    $(kind === "ball" ? "#planBallSlots" : "#planPassiveSlots").innerHTML = plan[kind].map((id, i) => {
+      const it = id && byId[id];
+      return `<div class="slot-wrap"><div class="slot ${kind} ${it ? "filled" : "empty"}" data-kind="${kind}" data-i="${i}" tabindex="0" role="button" title="${it ? esc(it.name) : "Add target"}">
+        ${it ? `<img src="${esc(it.icon)}" alt=""><div class="acts"><button data-act="info" title="Details">i</button><button data-act="remove" title="Remove">✕</button></div><span class="name">${esc(it.name)}</span>` : ""}
+      </div></div>`;
+    }).join("");
+  }
+
+  function heldRow(held, slots) {
+    const free = Math.max(0, slots - held.length);
+    return `<div class="held"><span class="lbl">${held.length}/${slots}</span>${held.map(h => icon(h)).join("")}${'<span class="free"></span>'.repeat(free)}</div>`;
+  }
+
+  function renderPlanKind(kind) {
+    const host = $(kind === "ball" ? "#planBall" : "#planPassive");
+    const s = solve(kind);
+    if (!s || !s.targets.length) {
+      host.innerHTML = `<div class="empty-note">Add target ${kind === "ball" ? "balls" : "passives"} to get a plan.</div>`;
+      return;
+    }
+    // pickup summary
+    const counts = {};
+    s.steps.filter(x => x.t === "pick").forEach(x => { counts[x.id] = (counts[x.id] || 0) + 1; });
+    const evoN = s.steps.filter(x => x.t === "evolve").length;
+    const summary = `<div class="plan-card"><h4>Pick up</h4>
+      <div class="plan-sum">${Object.entries(counts).map(([id, n]) =>
+        n > 1 ? icon(id).replace(/<\/span>$/, `<span class="cnt">×${n}</span></span>`) : icon(id)).join("")}</div>
+      <div class="plan-stat"><span><b>${s.pickups}</b> pickups</span><span><b>${evoN}</b> evolutions</span>
+        <span class="${s.over ? "bad" : "ok"}">Peak <b>${s.peak}</b> / ${s.slots} slots</span></div>
+      ${s.warns.length ? `<ul class="warn-list">${s.warns.map(w => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}</div>`;
+
+    // recipe tree with alternative pickers
+    const rows = [];
+    const seen = new Set();
+    const walk = (o, depth) => {
+      if (o.base) return;
+      const key = o.id + "@" + depth + "@" + rows.length;
+      if (!seen.has(key)) {
+        seen.add(key);
+        const r = byId[o.id];
+        const alts = r.recipes.map((p, i) => ({ p, i })).filter(x => recipeDlcOk(x.p, plan.dlc));
+        const sel = alts.length > 1
+          ? `<select data-ov="${esc(o.id)}" title="Choose recipe"><option value="">Auto (fewest pickups)</option>${alts.map(x =>
+              `<option value="${x.i}" ${plan.overrides[o.id] === x.i ? "selected" : ""}>${esc(x.p.map(q => byId[q].name).join(" + "))}</option>`).join("")}</select>`
+          : "";
+        rows.push(`<div class="tree-row" style="padding-left:${depth * 18}px">${icon(o.id, "sm")}<span class="nm">${esc(r.name)}</span><span class="eq">=</span>${o.parts.map(p => icon(p.id, "sm")).join('<span class="op">+</span>')}${sel}</div>`);
+      }
+      o.parts.forEach(p => walk(p, depth + 1));
+    };
+    s.opts.forEach(o => walk(o, 0));
+    const tree = rows.length ? `<div class="plan-card"><h4>Recipes used</h4><div class="tree">${rows.join("")}</div></div>` : "";
+
+    // steps
+    const steps = `<div class="plan-card"><h4>Order</h4><ol class="steps">${s.steps.map(st => {
+      if (st.t === "hdr") return `<li class="hdr">Build ${esc(byId[st.id].name)}</li>`;
+      const cls = [st.held.length > s.slots ? "over" : "", st.dupe ? "dupe" : ""].join(" ");
+      const act = st.t === "pick"
+        ? `<span class="verb pick">Pick up</span>${icon(st.id, "sm")}<span>${esc(byId[st.id].name)}</span>`
+        : `<span class="verb evolve">Evolve</span>${st.parts.map(p => icon(p, "sm")).join('<span class="op">+</span>')}<span class="op">→</span>${icon(st.id, "sm")}<span>${esc(byId[st.id].name)}</span>`;
+      return `<li class="${cls}"><div><div class="act">${act}</div>${heldRow(st.held, s.slots)}</div></li>`;
+    }).join("")}</ol></div>`;
+
+    host.innerHTML = summary + tree + steps;
+  }
+
+  function renderPlan() {
+    renderPlanSlots("ball"); renderPlanSlots("passive");
+    renderPlanKind("ball"); renderPlanKind("passive");
+  }
+
+  for (const sel of ["#planBallSlots", "#planPassiveSlots"]) {
+    const el = $(sel);
+    const act = (slot, a) => {
+      const kind = slot.dataset.kind, i = +slot.dataset.i;
+      if (a === "remove") { plan[kind][i] = null; savePlan(); renderPlan(); }
+      else if (a === "info") openDetail(plan[kind][i]);
+      else openPicker(kind, i, "plan");
+    };
+    el.addEventListener("click", e => {
+      const slot = e.target.closest(".slot"); if (!slot) return;
+      act(slot, e.target.closest("[data-act]")?.dataset.act);
+    });
+    el.addEventListener("keydown", e => {
+      if (!e.target.classList.contains("slot")) return;
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); act(e.target); }
+      if (e.key === "Delete" || e.key === "Backspace") act(e.target, "remove");
+    });
+  }
+  for (const sel of ["#planBall", "#planPassive"]) {
+    const el = $(sel);
+    el.addEventListener("change", e => {
+      const s = e.target.closest("[data-ov]"); if (!s) return;
+      if (s.value === "") delete plan.overrides[s.dataset.ov]; else plan.overrides[s.dataset.ov] = +s.value;
+      savePlan(); renderPlan();
+    });
+    el.addEventListener("click", e => { const ic = e.target.closest(".ico"); if (ic) openDetail(ic.dataset.id); });
+    el.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.classList.contains("ico")) e.target.click(); });
+  }
+
   // ---------- routing ----------
   let currentView = "run";
   function route() {
-    currentView = location.hash === "#legend" ? "legend" : "run";
+    currentView = { "#legend": "legend", "#plan": "plan" }[location.hash] || "run";
     document.querySelectorAll(".view").forEach(v => { v.hidden = v.id !== "view-" + currentView; });
     document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("on", a.dataset.tab === currentView));
-    if (currentView === "run") renderRun(); else renderLegend();
+    if (currentView === "run") renderRun();
+    else if (currentView === "plan") renderPlan();
+    else renderLegend();
   }
   window.addEventListener("hashchange", route);
   route();

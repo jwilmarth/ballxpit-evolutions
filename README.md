@@ -7,6 +7,10 @@ A static GitHub Pages site for **BALL x PIT** with two views:
   - **One away**: click the dimmed part to add it to a free slot.
   - **Further away**: evolutions that need two or more parts you don't have yet.
   - **Fuse** (⧉ on a ball slot) merges two balls into one slot, using the game's rules: you can't fuse the same ball twice, a ball can only be fused once, and you can't fuse two balls that already form an evolution. Fused balls are left out of evolutions unless you turn on "Fused balls can evolve".
+- **Plan** (`#plan`): pick the balls and passives you want to end the run with. It works out:
+  - every base item you need to pick up (with ×2 when a target needs the same one twice),
+  - which recipe to use for each evolution (automatic, or choose your own),
+  - a step-by-step order of pickups and evolutions with your slots shown after each step, built so you use as few slots as possible at the busiest point. It warns you if that peak is more than your slot count, or if you'd need two copies of the same item at once.
 - **Legend** (`#legend`): every ball and passive evolution, grouped by tier, by ingredient, or A–Z. You can search, filter by ingredient, and hide the Naturalist DLC. Click any icon for its description, what it's made from and what it's used in.
 
 The run is saved in your browser's localStorage.
