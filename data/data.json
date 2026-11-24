@@ -1,0 +1,3296 @@
+{
+ "gameVersion": "1.308",
+ "items": [
+  {
+   "id": "hupg_beast",
+   "kind": "ball",
+   "name": "Beast",
+   "desc": "Attaches to enemies, dealing {[min_damage_second]}-{[max_damage_second]} damage per second until it's dead.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#847874",
+   "icon": "icons/hupg_beast.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_bleed",
+   "kind": "ball",
+   "name": "Bleed",
+   "desc": "Inflicts {[bleed_amt]} stacks of bleed. Bleeding enemies receive 1 damage per stack when hit by a ball (Max {[bleed_max_stacks]} stacks)",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#8d240d",
+   "icon": "icons/hupg_bleed.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_broodmother",
+   "kind": "ball",
+   "name": "Brood Mother",
+   "desc": "Has a {[birth_chance]} chance of birthing a baby ball each time it hits an enemy",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#e97b49",
+   "icon": "icons/hupg_broodmother.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_burn",
+   "kind": "ball",
+   "name": "Burn",
+   "desc": "Add 1 stack of burn on hit for {[burn_length]} seconds (max {[max_burn_stacks]} stacks). Burnt units are dealt {[min_burn_damage]}-{[max_burn_damage]} damage per stack per second.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#ff7d21",
+   "icon": "icons/hupg_burn.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_cell",
+   "kind": "ball",
+   "name": "Cell",
+   "desc": "Splits into a clone on hit {[cell_limit]} times.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#5ccc7d",
+   "icon": "icons/hupg_cell.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_charm",
+   "kind": "ball",
+   "name": "Charm",
+   "desc": "Each hit has a {[charm_chance]} chance of charming the enemy for {[charm_length]} seconds. Charmed units walk up the board and attack enemies.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#f12181",
+   "icon": "icons/hupg_charm.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_dark",
+   "kind": "ball",
+   "name": "Dark",
+   "desc": "Deals {[damage_multiplier]}x damage but destroys itself after hitting an enemy. Has a {[cooldown_length]} second cooldown before it can be shot again.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#9400a8",
+   "icon": "icons/hupg_dark.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_earthquake",
+   "kind": "ball",
+   "name": "Earthquake",
+   "desc": "Deals {[min_earthquake_damage]}-{[max_earthquake_damage]} damage to nearby units in a {[range]}x{[range]} tile square",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#745639",
+   "icon": "icons/hupg_earthquake.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_eggsac",
+   "kind": "ball",
+   "name": "Egg Sac",
+   "desc": "Explodes into {[min_babies]}-{[max_babies]} baby balls on hitting an enemy. Has a {[cooldown_length]} second cooldown before it can be shot again.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#ab9b8e",
+   "icon": "icons/hupg_eggsac.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_flesh",
+   "kind": "ball",
+   "name": "Flesh",
+   "desc": "Speed increases by {[acceleration]} per bounce",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#bb816e",
+   "icon": "icons/hupg_flesh.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_force",
+   "kind": "ball",
+   "name": "Force",
+   "desc": "Pierces enemies. Damage increases by {[damage_pct]} each time it hits an enemy (max {[max_damage_pct]}).",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#8381d2",
+   "icon": "icons/hupg_force.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_freeze",
+   "kind": "ball",
+   "name": "Freeze",
+   "desc": "Has a {[freeze_pct]} chance to freeze enemies for {[freeze_length]} seconds. Frozen enemies receive {[freeze_damage_pct]} more damage",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#6acdad",
+   "icon": "icons/hupg_freeze.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_ghost",
+   "kind": "ball",
+   "name": "Ghost",
+   "desc": "Passes through enemies.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#5078b3",
+   "icon": "icons/hupg_ghost.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_heavy",
+   "kind": "ball",
+   "name": "Iron",
+   "desc": "Deals double damage but moves {[reduce_speed_pct]} slower",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#847875",
+   "icon": "icons/hupg_heavy.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_laserhorz",
+   "kind": "ball",
+   "name": "Laser (Horizontal)",
+   "desc": "Deals {[min_laser_damage]}-{[max_laser_damage]} damage to all enemies in the same row",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#cf8422",
+   "icon": "icons/hupg_laserhorz.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_laservert",
+   "kind": "ball",
+   "name": "Laser (Vertical)",
+   "desc": "Deals {[min_laser_damage]}-{[max_laser_damage]} damage to all enemies in the same column",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#cf8422",
+   "icon": "icons/hupg_laservert.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_light",
+   "kind": "ball",
+   "name": "Light",
+   "desc": "Blinds enemies on hit for {[blind_length]} seconds. Blinded units have a hard time detecting you and have a 50% chance of missing when they attack.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#faf2d4",
+   "icon": "icons/hupg_light.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_lightning",
+   "kind": "ball",
+   "name": "Lightning",
+   "desc": "Deals {[min_lightning_damage]}-{[max_lightning_damage]} damage to up to {[lightning_limit]} nearby enemies",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#f7da8b",
+   "icon": "icons/hupg_lightning.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_poison",
+   "kind": "ball",
+   "name": "Poison",
+   "desc": "Applies 1 stack of poison on hit (max {[max_poison_stacks]} stacks). Poison lasts for {[poison_length]} seconds and each stack deals {[min_poison_damage]}-{[max_poison_damage]} damage per second",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#5ad21c",
+   "icon": "icons/hupg_poison.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_stone",
+   "kind": "ball",
+   "name": "Stone",
+   "desc": "Initially deals {[damage_pct]} damage. Damage erodes by {[reduce_dmg_pct]} each time hitting an enemy (minimum {[min_damage_pct]}).",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#bbbcbb",
+   "icon": "icons/hupg_stone.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_time",
+   "kind": "ball",
+   "name": "Time",
+   "desc": "Explodes into a time snare upon hitting an enemy, which stays on the field for {[time_snare_length]} seconds and freezes enemies inside it.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#fdce5e",
+   "icon": "icons/hupg_time.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_vampire",
+   "kind": "ball",
+   "name": "Vampire",
+   "desc": "Each hit has a {[lifesteal_chance]} chance of healing {[lifesteal_heal]} health",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#841775",
+   "icon": "icons/hupg_vampire.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_water",
+   "kind": "ball",
+   "name": "Water",
+   "desc": "Explodes into {[min_babies]}-{[max_babies]} baby water balls on hitting an enemy, dealing {[min_water_damage]}-{[max_water_damage]} damage to nearby enemies. Baby water balls deal reduced damage to an area around them on hit. Has a {[cooldown_length]} second cooldown before it can be shot again.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#517991",
+   "icon": "icons/hupg_water.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_wind",
+   "kind": "ball",
+   "name": "Wind",
+   "desc": "Passes through enemies and slows them down by {[slow_pct]} for {[slow_len]} seconds, but deals 25% less damage.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#cef2ec",
+   "icon": "icons/hupg_wind.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_wood",
+   "kind": "ball",
+   "name": "Wood",
+   "desc": "Deals {[min_aoe_damage]}-{[max_aoe_damage]} damage to nearby enemies. AOE damage increases by {[damage_pct]} each hit (max {[max_damage_pct]}).",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#db9e68",
+   "icon": "icons/hupg_wood.png",
+   "recipes": []
+  },
+  {
+   "id": "hupg_armageddon",
+   "kind": "ball",
+   "name": "Armageddon",
+   "desc": "Creates a meteor shower upon hitting an enemy. The meteor shower lasts for {[armageddon_len]} seconds and deals {[min_armageddon_damage]}-{[max_armageddon_damage]} damage / second to enemies within a {[range]} tile radius.",
+   "dlc": 0,
+   "tier": 3,
+   "color": "#ff4200",
+   "icon": "icons/hupg_armageddon.png",
+   "recipes": [
+    [
+     "hupg_inferno",
+     "hupg_storm"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_ash",
+   "kind": "ball",
+   "name": "Ash",
+   "desc": "Goes through enemies and leaves behind a trail of ash for the first {[emission_length]} after being launched. Ash lasts for {[steam_lifetime]} seconds and applies 1 stack of burn per second (max {[max_burn_stacks]} stacks). Burn  lasts for {[burn_length]} seconds. Burnt units are dealt {[min_burn_damage]}-{[max_burn_damage]} damage per stack per second.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#6acdad",
+   "icon": "icons/hupg_ash.png",
+   "recipes": [
+    [
+     "hupg_wood",
+     "hupg_burn"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_assassin",
+   "kind": "ball",
+   "name": "Assassin",
+   "desc": "Passes through the front of enemies, but not the back. Backstabs deal {[damage_pct]} bonus damage.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#55094e",
+   "icon": "icons/hupg_assassin.png",
+   "recipes": [
+    [
+     "hupg_heavy",
+     "hupg_ghost"
+    ],
+    [
+     "hupg_heavy",
+     "hupg_dark"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_darkflame",
+   "kind": "ball",
+   "name": "Banished Flame",
+   "desc": "Add 1 stack of darkflame on hit for {[burn_length]} seconds (max {[max_burn_stacks]} stacks). Darkflame deals {[min_burn_damage]}-{[max_burn_damage]} damage per stack per second. When the darkflame goes out, it deals {[min_darkflame_burst]}-{[max_darkflame_burst]} to the enemy.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#562175",
+   "icon": "icons/hupg_darkflame.png",
+   "recipes": [
+    [
+     "hupg_dark",
+     "hupg_burn"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_banshee",
+   "kind": "ball",
+   "name": "Banshee",
+   "desc": "Curses all enemies while on the field when launched. Cursed enemies are dealt {[min_curse_damage]}-{[max_curse_damage]} after being hit {[curse_delay]} times.",
+   "dlc": 0,
+   "tier": 3,
+   "color": "#c2d3a6",
+   "icon": "icons/hupg_banshee.png",
+   "recipes": [
+    [
+     "hupg_phantom",
+     "hupg_wraith"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_berserk",
+   "kind": "ball",
+   "name": "Berserk",
+   "desc": "Each hit has a {[berserk_chance]} chance of causing enemies to go berserk for {[berserk_length]} seconds. Berserk enemies deal {[min_berserk_damage]}-{[max_berserk_damage]} damage to adjacent enemies every second.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#e84a7e",
+   "icon": "icons/hupg_berserk.png",
+   "recipes": [
+    [
+     "hupg_charm",
+     "hupg_burn"
+    ],
+    [
+     "hupg_charm",
+     "hupg_bleed"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_blackhole",
+   "kind": "ball",
+   "name": "Black Hole",
+   "desc": "Instantly kills the first non-boss enemy that it hits, but destroys itself afterwards. Has a {[cooldown_length]} second cooldown before it can be shot again.",
+   "dlc": 0,
+   "tier": 2,
+   "color": "#5b004e",
+   "icon": "icons/hupg_blackhole.png",
+   "recipes": [
+    [
+     "hupg_dark",
+     "hupg_sun"
+    ],
+    [
+     "hupg_time",
+     "hupg_sun"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_blizzard",
+   "kind": "ball",
+   "name": "Blizzard",
+   "desc": "Freezes all enemies within a {[range]} tile radius for {[freeze_length]} seconds, dealing {[min_lightning_damage]}-{[max_lightning_damage]} damage.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#7dbba6",
+   "icon": "icons/hupg_blizzard.png",
+   "recipes": [
+    [
+     "hupg_freeze",
+     "hupg_lightning"
+    ],
+    [
+     "hupg_freeze",
+     "hupg_wind"
+    ],
+    [
+     "hupg_water",
+     "hupg_freeze"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_bomb",
+   "kind": "ball",
+   "name": "Bomb",
+   "desc": "Explodes when hitting an enemy, dealing {[min_bomb_damage]}-{[max_bomb_damage]} damage to nearby enemies. Has a {[cooldown_length]} second cooldown before it can be shot again.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#e54309",
+   "icon": "icons/hupg_bomb.png",
+   "recipes": [
+    [
+     "hupg_burn",
+     "hupg_heavy"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_brimstone",
+   "kind": "ball",
+   "name": "Brimstone",
+   "desc": "Applies 1 stack of burn and poison every second to all enemies within a {[range]} tile radius (max {[max_burn_stacks]} stacks). Burn deals {[min_burn_damage]}-{[max_burn_damage]} damage per stack per second and poison deals {[min_poison_damage]}-{[max_poison_damage]} damage per stack per second.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#b9d44a",
+   "icon": "icons/hupg_brimstone.png",
+   "recipes": [
+    [
+     "hupg_stone",
+     "hupg_burn"
+    ],
+    [
+     "hupg_poison",
+     "hupg_burn"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_bullet",
+   "kind": "ball",
+   "name": "Bullet",
+   "desc": "Pierces enemies. Initially deals {[damage_pct]} damage. Damage erodes by {[reduce_dmg_pct]} each time hitting an enemy (minimum {[min_damage_pct]}).",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#837874",
+   "icon": "icons/hupg_bullet.png",
+   "recipes": [
+    [
+     "hupg_heavy",
+     "hupg_force"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_catapult",
+   "kind": "ball",
+   "name": "Catapult",
+   "desc": "Launches {[min_babies]}-{[max_babies]} stone baby balls every {[spawn_rate]} seconds, which are destroyed after hitting anything.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#998790",
+   "icon": "icons/hupg_catapult.png",
+   "recipes": [
+    [
+     "hupg_stone",
+     "hupg_eggsac"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_drill",
+   "kind": "ball",
+   "name": "Drill",
+   "desc": "Pierces enemies and deals {[damage_pct]} bonus damage until reaching the back of the field.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#9b7f91",
+   "icon": "icons/hupg_drill.png",
+   "recipes": [
+    [
+     "hupg_earthquake",
+     "hupg_heavy"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_erosion",
+   "kind": "ball",
+   "name": "Erosion",
+   "desc": "Passes through enemies. Deals {[damage_pct]} of enemy's current health as bonus damage on hit.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ba9158",
+   "icon": "icons/hupg_erosion.png",
+   "recipes": [
+    [
+     "hupg_time",
+     "hupg_wind"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_fireworks",
+   "kind": "ball",
+   "name": "Fireworks",
+   "desc": "Explodes into {[min_fireworks]}-{[max_fireworks]} fireworks. Fireworks target random enemies, dealing {[min_firework_damage]} - {[max_firework_damage]} damage and applying 1 stack of burn. Burnt units are dealt {[min_burn_damage]}-{[max_burn_damage]} damage per stack per second.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ae5d40",
+   "icon": "icons/hupg_fireworks.png",
+   "recipes": [
+    [
+     "hupg_burn",
+     "hupg_eggsac"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_flash",
+   "kind": "ball",
+   "name": "Flash",
+   "desc": "Damage all enemies on screen for {[min_flash_damage]} - {[max_flash_damage]} damage after hitting an enemy and blind them for {[blind_length]} seconds.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ddd8eb",
+   "icon": "icons/hupg_flash.png",
+   "recipes": [
+    [
+     "hupg_lightning",
+     "hupg_light"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_fleshmound",
+   "kind": "ball",
+   "name": "Flesh Mound",
+   "desc": "Emits a fleshy baby ball in a random direction every {[spawn_rate]} seconds.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#bb816e",
+   "icon": "icons/hupg_fleshmound.png",
+   "recipes": [
+    [
+     "hupg_broodmother",
+     "hupg_flesh"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_flicker",
+   "kind": "ball",
+   "name": "Flicker",
+   "desc": "Deals {[min_flicker_damage]}-{[max_flicker_damage]} damage to every enemy on screen every {[flicker_cycle]} seconds.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#fff2e8",
+   "icon": "icons/hupg_flicker.png",
+   "recipes": [
+    [
+     "hupg_light",
+     "hupg_dark"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_freezeray",
+   "kind": "ball",
+   "name": "Freeze Ray",
+   "desc": "Emits a freeze ray when hitting an enemy, dealing  {[min_laser_damage]}-{[max_laser_damage]} to all enemies in its path, with a {[freeze_pct]} chance of freezing them for {[freeze_length]} seconds",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#17a697",
+   "icon": "icons/hupg_freezeray.png",
+   "recipes": [
+    [
+     "hupg_freeze",
+     "hupg_laserhorz"
+    ],
+    [
+     "hupg_freeze",
+     "hupg_laservert"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_frozenflame",
+   "kind": "ball",
+   "name": "Frozen Flame",
+   "desc": "Add 1 stack of frostburn on hit for {[frostburn_length]} seconds (max {[max_frostburn_stacks]} stacks). Frostburnt units are dealt {[min_frostburn_damage]}-{[max_frostburn_damage]} damage per stack per second and receive {[freeze_damage_pct]} more damage from other sources.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#3ecfaf",
+   "icon": "icons/hupg_frozenflame.png",
+   "recipes": [
+    [
+     "hupg_burn",
+     "hupg_freeze"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_fruit",
+   "kind": "ball",
+   "name": "Fruit",
+   "desc": "Destroyed after hitting {[hit_limit]} enemies, but heals you by {[heal_amt]} if it returns to you.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#d65631",
+   "icon": "icons/hupg_fruit.png",
+   "recipes": [
+    [
+     "hupg_wood",
+     "hupg_cell"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_gale",
+   "kind": "ball",
+   "name": "Gale",
+   "desc": "Knocks enemies into the air briefly, allowing balls to pass under them. Enemies are hurt for {[min_fall_damage]} - {[max_fall_damage]} damage upon falling back to the ground.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#6acdad",
+   "icon": "icons/hupg_gale.png",
+   "recipes": [
+    [
+     "hupg_force",
+     "hupg_wind"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_glacier",
+   "kind": "ball",
+   "name": "Glacier",
+   "desc": "Releases glacial spikes over time that deal {[min_glacier_damage]}-{[max_glacier_damage]} to enemies that touch them and freeze them for {[freeze_length]} seconds. This ball and its glacial spikes also deal {[min_earthquake_damage]}-{[max_earthquake_damage]} damage to nearby units.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#5eabc0",
+   "icon": "icons/hupg_glacier.png",
+   "recipes": [
+    [
+     "hupg_freeze",
+     "hupg_earthquake"
+    ],
+    [
+     "hupg_freeze",
+     "hupg_stone"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_heartswallower",
+   "kind": "ball",
+   "name": "Heart Swallower",
+   "desc": "Saps enemies on hit, with a {[lifesteal_chance]} chance of stealing {[lifesteal_heal]} health and reducing their attack damage by {[reduce_dmg_pct]}. Lifesteal chance only applies once per enemy.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#2a4657",
+   "icon": "icons/hupg_heartswallower.png",
+   "recipes": [
+    [
+     "hupg_bleed",
+     "hupg_ghost"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_hedgehog",
+   "kind": "ball",
+   "name": "Hedgehog",
+   "desc": "Inflicts {[bleed_amt]} stacks of bleed (Max {[bleed_max_stacks]} stacks) and emits {[min_babies]} - {[max_babies]} spiky baby balls on hitting an enemy.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#d1b187",
+   "icon": "icons/hupg_hedgehog.png",
+   "recipes": [
+    [
+     "hupg_beast",
+     "hupg_bleed"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_hemorrhage",
+   "kind": "ball",
+   "name": "Hemorrhage",
+   "desc": "Inflicts {[bleed_amt]} stacks of bleed. When hitting an enemy with {[bleed_max_stacks]} stacks of bleed or more, consumes all stacks of bleed to deal {[hemorrhage_pct]} of their current health.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#d42328",
+   "icon": "icons/hupg_hemorrhage.png",
+   "recipes": [
+    [
+     "hupg_bleed",
+     "hupg_heavy"
+    ],
+    [
+     "hupg_bleed",
+     "hupg_flesh"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_lasercross",
+   "kind": "ball",
+   "name": "Holy Laser",
+   "desc": "Deals {[min_laser_damage]}-{[max_laser_damage]} damage to all enemies in the same row and column",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#fff8af",
+   "icon": "icons/hupg_lasercross.png",
+   "recipes": [
+    [
+     "hupg_laserhorz",
+     "hupg_laservert"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_incubus",
+   "kind": "ball",
+   "name": "Incubus",
+   "desc": "Each hit has a {[charm_chance]} chance of charming the enemy for {[charm_length]} seconds. Charmed enemies curse nearby enemies. Cursed enemies are dealt {[min_curse_damage]}-{[max_curse_damage]} after being hit {[curse_delay]} times.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#c840c2",
+   "icon": "icons/hupg_incubus.png",
+   "recipes": [
+    [
+     "hupg_charm",
+     "hupg_dark"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_inferno",
+   "kind": "ball",
+   "name": "Inferno",
+   "desc": "Applies 1 stack of burn every second to all enemies within a {[range]} tile radius. Burn lasts for {[burn_length]} seconds, dealing {[min_burn_damage]}-{[max_burn_damage]} damage per stack per second.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ff4200",
+   "icon": "icons/hupg_inferno.png",
+   "recipes": [
+    [
+     "hupg_burn",
+     "hupg_wind"
+    ],
+    [
+     "hupg_burn",
+     "hupg_time"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_ironwood",
+   "kind": "ball",
+   "name": "Ironwood",
+   "desc": "Deals {[min_aoe_damage]}-{[max_aoe_damage]} damage to nearby enemies. AOE damage increases by {[damage_pct]} each hit (max {[max_damage_pct]}).",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#6acdad",
+   "icon": "icons/hupg_ironwood.png",
+   "recipes": [
+    [
+     "hupg_heavy",
+     "hupg_wood"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_ivy",
+   "kind": "ball",
+   "name": "Ivy",
+   "desc": "Applies 1 stack of ivy. Each stack deals {[min_poison_damage]}-{[max_poison_damage]} damage per second. Upon reaching {[max_overgrowth_stacks]}, consume all stacks and deal {[min_overgrowth_damage]}-{[max_overgrowth_damage]} damage to all nearby enemies.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#6acdad",
+   "icon": "icons/hupg_ivy.png",
+   "recipes": [
+    [
+     "hupg_wood",
+     "hupg_poison"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_kaiju",
+   "kind": "ball",
+   "name": "Kaiju",
+   "desc": "Moves slowly and deals triple damage. Deals {[min_earthquake_damage]}-{[max_earthquake_damage]} damage to nearby units every second",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#4f6c6f",
+   "icon": "icons/hupg_kaiju.png",
+   "recipes": [
+    [
+     "hupg_beast",
+     "hupg_earthquake"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_landslide",
+   "kind": "ball",
+   "name": "Landslide",
+   "desc": "Creates a landslide and destroys self upon hitting an enemy. The landslide lasts for {[landslide_len]} seconds and deals {[min_landslide_damage]}-{[max_landslide_damage]} damage / second to enemies within a {[range]} tile radius.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ff4200",
+   "icon": "icons/hupg_landslide.png",
+   "recipes": [
+    [
+     "hupg_stone",
+     "hupg_earthquake"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_laserbeam",
+   "kind": "ball",
+   "name": "Laser Beam",
+   "desc": "Emit a laser beam on hit that deals {[min_laser_damage]}-{[max_laser_damage]} damage and blinds enemies for {[blind_length]} seconds.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ff1515",
+   "icon": "icons/hupg_laserbeam.png",
+   "recipes": [
+    [
+     "hupg_laserhorz",
+     "hupg_light"
+    ],
+    [
+     "hupg_laservert",
+     "hupg_light"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_lasercutter",
+   "kind": "ball",
+   "name": "Laser Cutter",
+   "desc": "Constantly emits a laser in front of it, which deals {[min_laser_damage]}-{[max_laser_damage]} per second.",
+   "dlc": 0,
+   "tier": 2,
+   "color": "#ffff1f",
+   "icon": "icons/hupg_lasercutter.png",
+   "recipes": [
+    [
+     "hupg_laserhorz",
+     "hupg_steel"
+    ],
+    [
+     "hupg_laservert",
+     "hupg_steel"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_leech",
+   "kind": "ball",
+   "name": "Leech",
+   "desc": "Attaches up to 1 leech onto enemies it hits, which adds {[bleed_amt]} stacks of bleed per second (Max {[bleed_max_stacks]} stacks)",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#847875",
+   "icon": "icons/hupg_leech.png",
+   "recipes": [
+    [
+     "hupg_broodmother",
+     "hupg_bleed"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_lightningbug",
+   "kind": "ball",
+   "name": "Lightning Bug",
+   "desc": "Spawns a lightning bug each time it hits an enemy. Lightning bugs attack a random enemy, dealing {[min_lightning_damage]} - {[max_lightning_damage]} damage to up to {[lightning_limit]} nearby enemies.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ae5d40",
+   "icon": "icons/hupg_lightningbug.png",
+   "recipes": [
+    [
+     "hupg_lightning",
+     "hupg_broodmother"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_lightningrod",
+   "kind": "ball",
+   "name": "Lightning Rod",
+   "desc": "Plants a lightning rod into enemies it hits. These enemies are struck by lightning every {[lightning_rod_length]} seconds, dealing {[min_lightning_damage]}-{[max_lightning_damage]} damage to up to {[lightning_limit]} nearby enemies",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#847875",
+   "icon": "icons/hupg_lightningrod.png",
+   "recipes": [
+    [
+     "hupg_lightning",
+     "hupg_heavy"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_lovestruck",
+   "kind": "ball",
+   "name": "Lovestruck",
+   "desc": "Inflicts lovestruck on hit enemies for {[lovestruck_length]} seconds. Lovestruck units have a 50% chance of healing you for {[lovestruck_heal]} health when they attack.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ad686c",
+   "icon": "icons/hupg_lovestruck.png",
+   "recipes": [
+    [
+     "hupg_charm",
+     "hupg_light"
+    ],
+    [
+     "hupg_charm",
+     "hupg_lightning"
+    ],
+    [
+     "hupg_charm",
+     "hupg_time"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_maggot",
+   "kind": "ball",
+   "name": "Maggot",
+   "desc": "Infest enemies on hit with maggots. When they die, they explode into {[min_babies]}-{[max_babies]} baby balls",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ab9b8e",
+   "icon": "icons/hupg_maggot.png",
+   "recipes": [
+    [
+     "hupg_cell",
+     "hupg_broodmother"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_magma",
+   "kind": "ball",
+   "name": "Magma",
+   "desc": "Emits lava blobs over time. Enemies who walk into lava blobs are dealt {[min_magma_damage]} - {[max_magma_damage]} damage and gain 1 stack of burn (max {[max_burn_stacks]} stacks). Burn lasts for {[burn_length]} seconds, dealing  {[min_burn_damage]}-{[max_burn_damage]} damage per stack per second.  This ball and its lava blobs also deal {[min_earthquake_damage]}-{[max_earthquake_damage]} damage to nearby units.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ff5721",
+   "icon": "icons/hupg_magma.png",
+   "recipes": [
+    [
+     "hupg_burn",
+     "hupg_earthquake"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_misfortune",
+   "kind": "ball",
+   "name": "Misfortune",
+   "desc": "Deals {[damage_multiplier]}x damage and curses all enemies on first hit, destroying self afterwards. Cursed enemies are dealt {[min_curse_damage]}-{[max_curse_damage]} damage after being hit {[curse_delay]} times. {[cooldown_length]} second cooldown.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#eeb145",
+   "icon": "icons/hupg_misfortune.png",
+   "recipes": [
+    [
+     "hupg_dark",
+     "hupg_force"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_mosquitoking",
+   "kind": "ball",
+   "name": "Mosquito King",
+   "desc": "Spawns a mosquito each time it hits an enemy. Mosquitos attack a random enemy, dealing {[min_mosquito_damage]} - {[max_mosquito_damage]} damage each. If a mosquito kills an enemy, they steal {[lifesteal_heal]} health.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ae5d40",
+   "icon": "icons/hupg_mosquitoking.png",
+   "recipes": [
+    [
+     "hupg_vampire",
+     "hupg_broodmother"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_mosquitokingdom",
+   "kind": "ball",
+   "name": "Mosquito Kingdom",
+   "desc": "Spawns {[min_mosquitos]}-{[max_mosquitos]} mosquitos each time it hits an enemy. Mosquitos attack a random enemy, dealing {[min_mosquito_damage]} - {[max_mosquito_damage]} damage each. If a mosquito kills an enemy, they steal {[lifesteal_heal]} health.",
+   "dlc": 0,
+   "tier": 3,
+   "color": "#ae5d40",
+   "icon": "icons/hupg_mosquitokingdom.png",
+   "recipes": [
+    [
+     "hupg_mosquitoking",
+     "hupg_mosquito"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_mosquito",
+   "kind": "ball",
+   "name": "Mosquito Swarm",
+   "desc": "Explodes into {[min_mosquitos]}-{[max_mosquitos]} mosquitos. Mosquitos attack random enemies, dealing {[min_mosquito_damage]} - {[max_mosquito_damage]} damage each. If a mosquito kills an enemy, they steal {[lifesteal_heal]} health.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ae5d40",
+   "icon": "icons/hupg_mosquito.png",
+   "recipes": [
+    [
+     "hupg_vampire",
+     "hupg_eggsac"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_mudslide",
+   "kind": "ball",
+   "name": "Mudslide",
+   "desc": "Creates a mudslide and destroys self upon hitting an enemy. The landslide lasts for {[landslide_len]} seconds and deals {[min_landslide_damage]}-{[max_landslide_damage]} damage / second to enemies and slowing them within a {[range]} tile radius.",
+   "dlc": 1,
+   "tier": 2,
+   "color": "#a1887b",
+   "icon": "icons/hupg_mudslide.png",
+   "recipes": [
+    [
+     "hupg_landslide",
+     "hupg_water"
+    ],
+    [
+     "hupg_sandstorm",
+     "hupg_water"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_noxious",
+   "kind": "ball",
+   "name": "Noxious",
+   "desc": "Passes through enemies and applies {[max_poison_stacks]} stacks of poison to nearby enemies within a {[range]} tile radius. Poison lasts for {[poison_length]} seconds and each stack deals {[min_poison_damage]}-{[max_poison_damage]} damage per second.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#539c3d",
+   "icon": "icons/hupg_noxious.png",
+   "recipes": [
+    [
+     "hupg_poison",
+     "hupg_wind"
+    ],
+    [
+     "hupg_dark",
+     "hupg_wind"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_nuke",
+   "kind": "ball",
+   "name": "Nuclear Bomb",
+   "desc": "Explodes when hitting an enemy, dealing {[min_bomb_damage]}-{[max_bomb_damage]} damage to nearby enemies and applying 1 stack of radiation to everyone present indefinitely (max {[max_radiation_stacks]} stacks). Each stack of radiation increases damage received by {[radiation_pct]}. Has a {[cooldown_length]} second cooldown.",
+   "dlc": 0,
+   "tier": 2,
+   "color": "#77743b",
+   "icon": "icons/hupg_nuke.png",
+   "recipes": [
+    [
+     "hupg_bomb",
+     "hupg_poison"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_offspring",
+   "kind": "ball",
+   "name": "Offspring",
+   "desc": "Splits into a clone on hit {[cell_limit]} times.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#be896a",
+   "icon": "icons/hupg_offspring.png",
+   "recipes": [
+    [
+     "hupg_cell",
+     "hupg_flesh"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_overgrowth",
+   "kind": "ball",
+   "name": "Overgrowth",
+   "desc": "Applies 1 stack of overgrowth. Upon reaching {[max_overgrowth_stacks]}, consume all stacks and deal {[min_overgrowth_damage]}-{[max_overgrowth_damage]} damage to all enemies in a {[range]}x{[range]} tile square.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#43c540",
+   "icon": "icons/hupg_overgrowth.png",
+   "recipes": [
+    [
+     "hupg_earthquake",
+     "hupg_cell"
+    ],
+    [
+     "hupg_wood",
+     "hupg_time"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_petrify",
+   "kind": "ball",
+   "name": "Petrify",
+   "desc": "Petrifies all enemies within its sightline for {[petrify_len]} seconds when first launched, dealing {[min_petrify_damage]}-{[max_petrify_damage]}.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#8ebf00",
+   "icon": "icons/hupg_petrify.png",
+   "recipes": [
+    [
+     "hupg_stone",
+     "hupg_flesh"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_phantom",
+   "kind": "ball",
+   "name": "Phantom",
+   "desc": "Curse enemies on hit. Cursed enemies are dealt {[min_curse_damage]}-{[max_curse_damage]} damage after being hit {[curse_delay]} times.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#784882",
+   "icon": "icons/hupg_phantom.png",
+   "recipes": [
+    [
+     "hupg_dark",
+     "hupg_ghost"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_radiationbeam",
+   "kind": "ball",
+   "name": "Radiation Beam",
+   "desc": "Emit a radiation beam on hit that deals {[min_laser_damage]}-{[max_laser_damage]} damage and applies 1 stack of radiation (max {[max_radiation_stacks]} stacks). Radiation lasts for {[radiation_length]} seconds and cause enemies to receive {[radiation_pct]} more damage from all sources per stack.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#3ad642",
+   "icon": "icons/hupg_radiationbeam.png",
+   "recipes": [
+    [
+     "hupg_laserhorz",
+     "hupg_poison"
+    ],
+    [
+     "hupg_laserhorz",
+     "hupg_cell"
+    ],
+    [
+     "hupg_laservert",
+     "hupg_cell"
+    ],
+    [
+     "hupg_laservert",
+     "hupg_poison"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_reaper",
+   "kind": "ball",
+   "name": "Reaper",
+   "desc": "Has a {[kill_chance]} chance to kill enemies on impact, healing you for {[kill_heal]} health.",
+   "dlc": 0,
+   "tier": 3,
+   "color": "#495b90",
+   "icon": "icons/hupg_reaper.png",
+   "recipes": [
+    [
+     "hupg_soulsucker",
+     "hupg_heartswallower"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_rot",
+   "kind": "ball",
+   "name": "Rot",
+   "desc": "Deals {[damage_pct]} of enemy's current health as bonus damage but destroys itself after hitting an enemy. {[cooldown_length]} second cooldown.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#85674b",
+   "icon": "icons/hupg_rot.png",
+   "recipes": [
+    [
+     "hupg_water",
+     "hupg_wood"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_sacrifice",
+   "kind": "ball",
+   "name": "Sacrifice",
+   "desc": "Inflicts {[bleed_amt]} stacks of bleed (Max {[bleed_max_stacks]} stacks) and applies curse to hit enemies. Cursed enemies are dealt {[min_curse_damage]}-{[max_curse_damage]} after being hit {[curse_delay]} times.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#e34f44",
+   "icon": "icons/hupg_sacrifice.png",
+   "recipes": [
+    [
+     "hupg_bleed",
+     "hupg_dark"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_sandstorm",
+   "kind": "ball",
+   "name": "Sandstorm",
+   "desc": "Goes through enemies and is surrounded by a raging storm dealing {[min_sandstorm_damage]}-{[max_sandstorm_damage]} damage per second and blinding nearby enemies for {[blind_length]} seconds.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#d1b187",
+   "icon": "icons/hupg_sandstorm.png",
+   "recipes": [
+    [
+     "hupg_earthquake",
+     "hupg_wind"
+    ],
+    [
+     "hupg_stone",
+     "hupg_wind"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_satan",
+   "kind": "ball",
+   "name": "Satan",
+   "desc": "While active, add 1 stack of burn to all active enemies per second (max {[max_burn_stacks]} stacks), dealing {[min_burn_damage]}-{[max_burn_damage]} damage per stack per second and make them go berserk, dealing {[min_berserk_damage]}-{[max_berserk_damage]} damage to adjacent enemies every second.",
+   "dlc": 0,
+   "tier": 3,
+   "color": "#df401b",
+   "icon": "icons/hupg_satan.png",
+   "recipes": [
+    [
+     "hupg_incubus",
+     "hupg_succubus"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_shotgun",
+   "kind": "ball",
+   "name": "Shotgun",
+   "desc": "Shoots {[min_babies]}-{[max_babies]} iron baby balls after hitting a wall. Iron baby balls move at {[base_speed]} speed but are destroyed upon hitting anything.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#9b7f91",
+   "icon": "icons/hupg_shotgun.png",
+   "recipes": [
+    [
+     "hupg_heavy",
+     "hupg_eggsac"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_siren",
+   "kind": "ball",
+   "name": "Siren",
+   "desc": "Goes through enemies. Each hit has a {[charm_chance]} chance of charming the enemy for {[charm_length]} seconds.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#858a83",
+   "icon": "icons/hupg_siren.png",
+   "recipes": [
+    [
+     "hupg_water",
+     "hupg_charm"
+    ],
+    [
+     "hupg_water",
+     "hupg_ghost"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_sniper",
+   "kind": "ball",
+   "name": "Sniper",
+   "desc": "Pierces enemies and shoots {[min_babies]}-{[max_babies]} sniper baby balls after hitting a wall. Sniper baby balls pierce enemies but are destroyed upon hitting a wall.",
+   "dlc": 0,
+   "tier": 3,
+   "color": "#6c5b66",
+   "icon": "icons/hupg_sniper.png",
+   "recipes": [
+    [
+     "hupg_shotgun",
+     "hupg_assassin"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_soulsucker",
+   "kind": "ball",
+   "name": "Soul Sucker",
+   "desc": "Passes through enemies and saps them, with a {[lifesteal_chance]} chance of stealing {[lifesteal_heal]} health and reducing their attack damage by {[reduce_dmg_pct]}. Lifesteal chance only applies once per enemy.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#3abf9a",
+   "icon": "icons/hupg_soulsucker.png",
+   "recipes": [
+    [
+     "hupg_vampire",
+     "hupg_ghost"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_spiderqueen",
+   "kind": "ball",
+   "name": "Spider Queen",
+   "desc": "Has a {[birth_chance]} chance of birthing an Egg Sac each time it hits an enemy",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ab9b8e",
+   "icon": "icons/hupg_spiderqueen.png",
+   "recipes": [
+    [
+     "hupg_broodmother",
+     "hupg_eggsac"
+    ],
+    [
+     "hupg_beast",
+     "hupg_eggsac"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_stalagmite",
+   "kind": "ball",
+   "name": "Stalagmite",
+   "desc": "Deals {[min_earthquake_damage]}-{[max_earthquake_damage]} damage to nearby units in a {[range]}x{[range]} tile square and knocks them into the air briefly, allowing balls to pass under them.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#6c4d36",
+   "icon": "icons/hupg_stalagmite.png",
+   "recipes": [
+    [
+     "hupg_force",
+     "hupg_earthquake"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_steam",
+   "kind": "ball",
+   "name": "Steam",
+   "desc": "Goes through enemies and leaves behind a trail of steam for the first {[emission_length]} seconds after being launched. Steam lasts for {[steam_lifetime]} seconds and deals {[min_steam_damage]} - {[max_steam_damage]} damage per second.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#737373",
+   "icon": "icons/hupg_steam.png",
+   "recipes": [
+    [
+     "hupg_water",
+     "hupg_burn"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_steel",
+   "kind": "ball",
+   "name": "Steel",
+   "desc": "Initially deals double damage but moves {[reduce_speed_pct]} slower. Damage increases by {[damage_pct]} each time it hits an enemy (max {[max_damage_pct]}).",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#939393",
+   "icon": "icons/hupg_steel.png",
+   "recipes": [
+    [
+     "hupg_heavy",
+     "hupg_stone"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_storm",
+   "kind": "ball",
+   "name": "Storm",
+   "desc": "Emits lightning to strike nearby enemies every second, dealing {[min_lightning_damage]}-{[max_lightning_damage]} damage.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#d5beab",
+   "icon": "icons/hupg_storm.png",
+   "recipes": [
+    [
+     "hupg_lightning",
+     "hupg_wind"
+    ],
+    [
+     "hupg_water",
+     "hupg_lightning"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_succubus",
+   "kind": "ball",
+   "name": "Succubus",
+   "desc": "Each hit has a {[charm_chance]} chance of charming the enemy for {[charm_length]} seconds. Heals {[lifesteal_heal]} when hitting a charmed enemy.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#d74c8d",
+   "icon": "icons/hupg_succubus.png",
+   "recipes": [
+    [
+     "hupg_charm",
+     "hupg_vampire"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_sun",
+   "kind": "ball",
+   "name": "Sun",
+   "desc": "Blind all enemies in view and add 1 stack of burn every second (max {[max_burn_stacks]} stacks). Burn lasts for {[burn_length]} seconds and deals {[min_burn_damage]}-{[max_burn_damage]} damage per stack per second.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ffc719",
+   "icon": "icons/hupg_sun.png",
+   "recipes": [
+    [
+     "hupg_burn",
+     "hupg_light"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_swamp",
+   "kind": "ball",
+   "name": "Swamp",
+   "desc": "Leaves behind tar blobs over time. Enemies who walk into tar blobs are dealt {[min_tar_damage]} - {[max_tar_damage]}, are slowed by {[slow_pct]} for {[slow_len]} seconds and gain 1 stack of poison (max {[max_poison_stacks]} stacks). Each stack of poison deals  {[min_poison_damage]}-{[max_poison_damage]} damage per second.  This ball and its tar blobs also deal {[min_earthquake_damage]}-{[max_earthquake_damage]} damage to nearby units.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#b3a555",
+   "icon": "icons/hupg_swamp.png",
+   "recipes": [
+    [
+     "hupg_poison",
+     "hupg_earthquake"
+    ],
+    [
+     "hupg_water",
+     "hupg_poison"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_thunderbird",
+   "kind": "ball",
+   "name": "Thunderbird",
+   "desc": "Attaches to enemies, dealing {[min_damage_second]}-{[max_damage_second]} damage per second while emitting lightning that deals {[min_lightning_damage]}-{[max_lightning_damage]} damage to nearby enemies.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#edc343",
+   "icon": "icons/hupg_thunderbird.png",
+   "recipes": [
+    [
+     "hupg_lightning",
+     "hupg_beast"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_timebomb",
+   "kind": "ball",
+   "name": "Time Bomb",
+   "desc": "Throws a time bomb every few seconds, which explodes after a delay, dealing {[min_bomb_damage]}-{[max_bomb_damage]} damage to nearby enemies. ",
+   "dlc": 0,
+   "tier": 2,
+   "color": "#c7c7ae",
+   "icon": "icons/hupg_timebomb.png",
+   "recipes": [
+    [
+     "hupg_time",
+     "hupg_bomb"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_timefreeze",
+   "kind": "ball",
+   "name": "Timestop",
+   "desc": "Freezes everything on the field for {[time_snare_length]} seconds but destroys itself after hitting an enemy. Has a {[cooldown_length]} second cooldown before it can be shot again.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#4a959f",
+   "icon": "icons/hupg_timefreeze.png",
+   "recipes": [
+    [
+     "hupg_time",
+     "hupg_freeze"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_tsunami",
+   "kind": "ball",
+   "name": "Tsunami",
+   "desc": "Goes through enemies and deals {[min_water_damage]} - {[max_water_damage]} damage in a large area, but is destroyed upon hitting an edge of the field.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#517991",
+   "icon": "icons/hupg_tsunami.png",
+   "recipes": [
+    [
+     "hupg_water",
+     "hupg_earthquake"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_tumor",
+   "kind": "ball",
+   "name": "Tumor",
+   "desc": "Applies tumor on hit. Enemies with a tumor die after {[tumor_length]} seconds (except for bosses).",
+   "dlc": 0,
+   "tier": 2,
+   "color": "#bb986e",
+   "icon": "icons/hupg_tumor.png",
+   "recipes": [
+    [
+     "hupg_radiationbeam",
+     "hupg_flesh"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_vampirelord",
+   "kind": "ball",
+   "name": "Vampire Lord",
+   "desc": "Each hit inflicts {[bleed_amt]} stacks of bleed. Heals {[lifesteal_heal]} health and consumes all stacks when hitting an enemy with at least {[lifesteal_bleed_stacks]} stacks of bleed.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#9d2e2e",
+   "icon": "icons/hupg_vampirelord.png",
+   "recipes": [
+    [
+     "hupg_vampire",
+     "hupg_bleed"
+    ],
+    [
+     "hupg_vampire",
+     "hupg_dark"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_venom",
+   "kind": "ball",
+   "name": "Venom",
+   "desc": "Applies 1 stack of venom on hit (max {[max_venom_stacks]} stacks). Each stack deals {[min_venom_damage]}-{[max_venom_damage]} damage per second and slows down enemies.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#5ad21c",
+   "icon": "icons/hupg_venom.png",
+   "recipes": [
+    [
+     "hupg_poison",
+     "hupg_freeze"
+    ],
+    [
+     "hupg_poison",
+     "hupg_beast"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_virus",
+   "kind": "ball",
+   "name": "Virus",
+   "desc": "Applies 1 stack of disease to units it hits (max {[max_disease_stacks]} stacks). Disease lasts for {[disease_length]} seconds. Each stack of disease deals {[min_disease_damage]}-{[max_disease_damage]} damage per second and diseased units have a {[disease_chance]} chance of passing a stack to undiseased nearby enemies each second. ",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#b3a555",
+   "icon": "icons/hupg_virus.png",
+   "recipes": [
+    [
+     "hupg_ghost",
+     "hupg_poison"
+    ],
+    [
+     "hupg_cell",
+     "hupg_poison"
+    ],
+    [
+     "hupg_bleed",
+     "hupg_poison"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_eggsacsac",
+   "kind": "ball",
+   "name": "Voluptuous Egg Sac",
+   "desc": "Explodes into {[min_egg_sacs]}-{[max_egg_sacs]} egg sacs on hitting an enemy. Has a {[cooldown_length]} second cooldown before it can be shot again.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#cacaca",
+   "icon": "icons/hupg_eggsacsac.png",
+   "recipes": [
+    [
+     "hupg_eggsac",
+     "hupg_cell"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_warp",
+   "kind": "ball",
+   "name": "Warp",
+   "desc": "After each hit, warps to a random spot on the field and speeds up by {[base_speed]}",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#e1c241",
+   "icon": "icons/hupg_warp.png",
+   "recipes": [
+    [
+     "hupg_time",
+     "hupg_light"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_waterbug",
+   "kind": "ball",
+   "name": "Water Bug",
+   "desc": "Births a baby ball each time it hits an enemy.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#d3b27a",
+   "icon": "icons/hupg_waterbug.png",
+   "recipes": [
+    [
+     "hupg_water",
+     "hupg_broodmother"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_waterfall",
+   "kind": "ball",
+   "name": "Waterfall",
+   "desc": "Creates a waterfall and destroys self upon hitting an enemy. The waterfall lasts for {[duration]} seconds and deals {[min_water_damage]}-{[max_water_damage]} damage / second to enemies within a {[range]} tile radius.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#ff4200",
+   "icon": "icons/hupg_waterfall.png",
+   "recipes": [
+    [
+     "hupg_water",
+     "hupg_force"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_werewolf",
+   "kind": "ball",
+   "name": "Werewolf",
+   "desc": "Attaches to enemies, dealing {[min_damage_second]}-{[max_damage_second]} damage per second until it's dead. {[lifesteal_chance]} chance to heal you for {[lifesteal_heal]} when target dies.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#9e7850",
+   "icon": "icons/hupg_werewolf.png",
+   "recipes": [
+    [
+     "hupg_beast",
+     "hupg_vampire"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_wolfpack",
+   "kind": "ball",
+   "name": "Wolfpack",
+   "desc": "Spawns with {[pack_size]} other copies. Attaches to enemies, dealing {[min_damage_second]}-{[max_damage_second]} damage per second until it's dead.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#517991",
+   "icon": "icons/hupg_wolfpack.png",
+   "recipes": [
+    [
+     "hupg_beast",
+     "hupg_broodmother"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_wraith",
+   "kind": "ball",
+   "name": "Wraith",
+   "desc": "Freezes any enemy it passes through for {[freeze_length]} seconds",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#579496",
+   "icon": "icons/hupg_wraith.png",
+   "recipes": [
+    [
+     "hupg_freeze",
+     "hupg_ghost"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_xray",
+   "kind": "ball",
+   "name": "X Ray",
+   "desc": "Emits an X-shaped laser on hit, which deals {[min_laser_damage]}-{[max_laser_damage]} damage to enemies and applies 1 stack of radiation (max {[max_radiation_stacks]} stacks). Radiation causes enemies to receive {[radiation_pct]} more damage from all sources per stack.",
+   "dlc": 0,
+   "tier": 3,
+   "color": "#b21717",
+   "icon": "icons/hupg_xray.png",
+   "recipes": [
+    [
+     "hupg_lasercross",
+     "hupg_laserbeam"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_zombie",
+   "kind": "ball",
+   "name": "Zombie",
+   "desc": "Infects enemies on hit, giving them a {[zombie_chance]} chance to turn into a friendly zombie on death",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#5ccc7d",
+   "icon": "icons/hupg_zombie.png",
+   "recipes": [
+    [
+     "hupg_vampire",
+     "hupg_flesh"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_nosferatu",
+   "kind": "ball",
+   "name": "Nosferatu",
+   "desc": "Spawns a vampire bat each bounce. Vampire bats fly towards a random enemy, dealing {[min_vampire_bat_damage]}-{[max_vampire_bat_damage]} damage on hit, turning into a Vampire Lord.",
+   "dlc": 0,
+   "tier": 3,
+   "color": "#d1b187",
+   "icon": "icons/hupg_nosferatu.png",
+   "recipes": [
+    [
+     "hupg_vampirelord",
+     "hupg_spiderqueen",
+     "hupg_mosquitoking"
+    ]
+   ]
+  },
+  {
+   "id": "hupg_elemental",
+   "kind": "ball",
+   "name": "Elemental",
+   "desc": "Applies a random status effect (burn, slow, or freeze) to nearby enemies on hit.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#ff4200",
+   "icon": "icons/hupg_elemental.png",
+   "recipes": [
+    [
+     "hupg_burn",
+     "hupg_wind",
+     "hupg_freeze",
+     "hupg_earthquake"
+    ]
+   ]
+  },
+  {
+   "id": "pass_ancientladle",
+   "kind": "passive",
+   "name": "Ancient Ladle",
+   "desc": "Your combined ball has a {[birth_chance]} chance of birthing a copy of one of its components with each bounce.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_ancientladle.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_archereffigy",
+   "kind": "passive",
+   "name": "Archer's Effigy",
+   "desc": "Every {[min_spawn_cycle]} - {[max_spawn_cycle]} rows, spawn a stone archer with {[ally_health]} health on your side. Stone archers are immune to ball damage and shoot arrows at enemies, dealing {[min_damage]}-{[max_damage]} each.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_archereffigy.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_robotheart",
+   "kind": "passive",
+   "name": "Artificial Heart",
+   "desc": "Friendly pieces gain {[ally_health_pct]} more health",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_robotheart.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_babyrattle",
+   "kind": "passive",
+   "name": "Baby Rattle",
+   "desc": "Gain {[follower_mult]}x baby balls, but your aim becomes scattered.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#2d90ff",
+   "icon": "icons/pass_babyrattle.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_bandageroll",
+   "kind": "passive",
+   "name": "Bandage Roll",
+   "desc": "Shoot {[min_babies]}-{[max_babies]} baby balls each time you're healed.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_bandageroll.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_bentspyglass",
+   "kind": "passive",
+   "name": "Bent Spyglass",
+   "desc": "Balls that are shot while aiming backwards deal {[damage_pct]} more damage.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_bentspyglass.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_tornado",
+   "kind": "passive",
+   "name": "Bottled Tornado",
+   "desc": "When you catch a special ball, automatically shoot {[min_babies]} - {[max_babies]} new baby balls in random directions.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_tornado.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_armor",
+   "kind": "passive",
+   "name": "Breastplate",
+   "desc": "Decrease damage taken by {[reduce_dmg_pct]}",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#a6b8cc",
+   "icon": "icons/pass_armor.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_chargedbracelet",
+   "kind": "passive",
+   "name": "Charged Bracelet",
+   "desc": "Increase range of all ball area-of-effects by an extra {[range_pct]}.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_chargedbracelet.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_crackedcinderblock",
+   "kind": "passive",
+   "name": "Cracked Cinderblock",
+   "desc": "After a special ball passes through a wall, spawn {[min_babies]} - {[max_babies]} baby balls where it emerges.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_crackedcinderblock.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_thorns",
+   "kind": "passive",
+   "name": "Crown of Thorns",
+   "desc": "Destroy the {[thorns_amt]} nearest enemies when you are hit from close range",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_thorns.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_decanter",
+   "kind": "passive",
+   "name": "Crystal Decanter",
+   "desc": "Balls deal {[damage_pct]} more damage when in orbit.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_decanter.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_cursedelixir",
+   "kind": "passive",
+   "name": "Cursed Elixir",
+   "desc": "When a poisoned enemy dies, {[zombie_chance]} chance for them to come back as a zombie with {[ally_health]} health that moves up the board and fights enemies",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_cursedelixir.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_deadeyesamulet",
+   "kind": "passive",
+   "name": "Deadeye's Amulet",
+   "desc": "Critical hits deal {[min_damage]}-{[max_damage]} bonus damage.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_deadeyesamulet.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_frontstabdagger",
+   "kind": "passive",
+   "name": "Diamond Hilted Dagger",
+   "desc": "Increase crit chance to {[crit_chance]} when hitting enemies in the front.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_frontstabdagger.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_dynamite",
+   "kind": "passive",
+   "name": "Dynamite",
+   "desc": "Every {[min_spawn_cycle]} - {[max_spawn_cycle]} rows, spawn an enemy with dynamite attached to them. Destroying them will deal {[min_dynamite_damage]} - {[max_dynamite_damage]} damage to nearby enemies.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#fff3e9",
+   "icon": "icons/pass_dynamite.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_eldritchgauntlet",
+   "kind": "passive",
+   "name": "Eldritch Gauntlet",
+   "desc": "Increase bonus damage after hitting the right wall by {[damage_pct]}.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_eldritchgauntlet.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_rightstabdagger",
+   "kind": "passive",
+   "name": "Emerald Hilted Dagger",
+   "desc": "Increase crit chance to {[crit_chance]} when hitting enemies on their right side.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_rightstabdagger.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_etherealcloak",
+   "kind": "passive",
+   "name": "Ethereal Cloak",
+   "desc": "Balls go through enemies and deal {[damage_pct]} bonus damage until they hit the back of the field",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_etherealcloak.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_overheal",
+   "kind": "passive",
+   "name": "Everflowing Goblet",
+   "desc": "You can heal past your max health at {[overheal_efficiency]} efficiency.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_overheal.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_eyeball",
+   "kind": "passive",
+   "name": "Eye of the Beholder",
+   "desc": "{[dodge_pct]} chance to dodge incoming attacks",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_eyeball.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_sneakers",
+   "kind": "passive",
+   "name": "Fleet Feet",
+   "desc": "Increase movement speed by {[move_speed_pct]} and move at full speed while shooting.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#00fffb",
+   "icon": "icons/pass_sneakers.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_boulder",
+   "kind": "passive",
+   "name": "Fractured Boulder",
+   "desc": "Increase area-of-effect damage (such as earthquake, laser, and lightning) and status effect damage (such as burn and poison) by {[damage_pct]}.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_boulder.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_frozenspike",
+   "kind": "passive",
+   "name": "Frozen Spike",
+   "desc": "When an enemy is frozen, they emit a chill to nearby enemies that deals {[min_damage]}-{[max_damage]} damage",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_frozenspike.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_gemspring",
+   "kind": "passive",
+   "name": "Gemspring",
+   "desc": "Every {[min_spawn_cycle]} - {[max_spawn_cycle]} rows, spawn a Gemspring. Dealing damage to them causes them to drop an increasing amount of XP gems.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#fff3e9",
+   "icon": "icons/pass_gemspring.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_ghostlycorset",
+   "kind": "passive",
+   "name": "Ghostly Corset",
+   "desc": "Balls go through enemies and deal {[damage_pct]} bonus damage when hitting them from the side ",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_ghostlycorset.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_ghostlyshield",
+   "kind": "passive",
+   "name": "Ghostly Shield",
+   "desc": "Balls go through allies and heal them for {[heal_amt]} health",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_ghostlyshield.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_goldenbull",
+   "kind": "passive",
+   "name": "Golden Bull",
+   "desc": "Every {[min_spawn_cycle]} - {[max_spawn_cycle]} rows, spawn a golden bull with {[ally_health]} health on your side. Golden bulls accrue  {[gold_per_minute]} <sprite name=gold> per minute. They also move up the field, blocking and attacking enemies in the way.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#fff3e9",
+   "icon": "icons/pass_goldenbull.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_goniometer",
+   "kind": "passive",
+   "name": "Goniometer",
+   "desc": "Balls' first bounce deals more damage based on how close to a perfect diagonal it is (up to {[damage_pct]}).",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_goniometer.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_handdrill",
+   "kind": "passive",
+   "name": "Hand Drill",
+   "desc": "Each time a ball loops around, it deals {[damage_pct]} extra damage on the next hit",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_handdrill.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_handfan",
+   "kind": "passive",
+   "name": "Hand Fan",
+   "desc": "Slow down enemies in the same column as you by {[slow_pct]}",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_handfan.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_handmedowns",
+   "kind": "passive",
+   "name": "Hand Me Downs",
+   "desc": "Launch {[min_babies]} - {[max_babies]} baby balls randomly with each shot.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_handmedowns.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_handmirror",
+   "kind": "passive",
+   "name": "Hand Mirror",
+   "desc": "Projectiles have a {[reflect_chance]} chance to reflect upon hitting you, dealing {[min_damage]} - {[max_damage]} damage if they hit an enemy",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_handmirror.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_healereffigy",
+   "kind": "passive",
+   "name": "Healer's Effigy",
+   "desc": "Every {[min_spawn_cycle]} - {[max_spawn_cycle]} rows, spawn a stone healer with {[ally_health]} health on your side, which heals you {[health_per_minute]} health per minute while it's on the field. Healers are immune to ball damage and move up the field, blocking and attacking enemies in the way.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_healereffigy.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_hourglass",
+   "kind": "passive",
+   "name": "Hourglass",
+   "desc": "Balls deal {[damage_pct]} damage, but damage decays by {[bonus_decay_pct]} each time they bounce (minimum {[min_damage_pct]}).",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_hourglass.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_irononesie",
+   "kind": "passive",
+   "name": "Iron Onesie",
+   "desc": "Balls deal {[damage_pct_tenth]} more damage for each baby ball on the field.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_irononesie.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_jugglersclub",
+   "kind": "passive",
+   "name": "Juggler's Club",
+   "desc": "Balls deal an extra {[min_damage]} - {[max_damage]} damage to nearby enemies upon first landing.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_jugglersclub.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_kissofdeath",
+   "kind": "passive",
+   "name": "Kiss of Death",
+   "desc": "Charmed enemies have a {[charm_kill_chance]} chance of dying after recovering.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_kissofdeath.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_krisknife",
+   "kind": "passive",
+   "name": "Kris Knife",
+   "desc": "Backstabs deal {[min_damage]} - {[max_damage]} bonus damage until they hit the back of the field",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_krisknife.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_kunai",
+   "kind": "passive",
+   "name": "Kunai",
+   "desc": "Balls deal {[min_damage]} - {[max_damage]} bonus damage to bosses and minibosses.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_kunai.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_loversquiver",
+   "kind": "passive",
+   "name": "Lover's Quiver",
+   "desc": "Projectiles have a {[heal_chance]} chance to heal you for {[heal_amt]} health instead of hurting you.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_loversquiver.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_luckycoin",
+   "kind": "passive",
+   "name": "Lucky Coin",
+   "desc": "{[bonus_gold_pct]} bonus gold dropped. Launch {[min_babies]} - {[max_babies]} baby balls when picking up gold or other resources.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_luckycoin.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_magicstaff",
+   "kind": "passive",
+   "name": "Magic Staff",
+   "desc": "Increase area-of-effect damage (such as earthquake, laser, and lightning) by {[aoe_dmg_pct]}",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#fff3e9",
+   "icon": "icons/pass_magicstaff.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_magnet",
+   "kind": "passive",
+   "name": "Magnet",
+   "desc": "Increase range at which you pick up items and catch balls by {[magnet_range]} tiles.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#452f29",
+   "icon": "icons/pass_magnet.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_midnightoil",
+   "kind": "passive",
+   "name": "Midnight Oil",
+   "desc": "Balls that hit flaming enemies light on fire and deal {[min_damage]}-{[max_damage]} bonus fire damage on the next hit.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_midnightoil.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_platinumdumbbell",
+   "kind": "passive",
+   "name": "Platinum Dumbbell",
+   "desc": "Balls deal {[damage_pct]} bonus damage until they hit the back of the field.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#aeb6b9",
+   "icon": "icons/pass_platinumdumbbell.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_corpseexplosion",
+   "kind": "passive",
+   "name": "Pressure Valve",
+   "desc": "Enemies explode on death, dealing {[min_damage]}-{[max_damage]} damage to adjacent enemies.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_corpseexplosion.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_protectivecharm",
+   "kind": "passive",
+   "name": "Protective Charm",
+   "desc": "Gain a shield that blocks the next damage you would receive. Recharges after {[cooldown_length]} seconds.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_protectivecharm.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_feather",
+   "kind": "passive",
+   "name": "Radiant Feather",
+   "desc": "Increase ball launch speed by {[base_speed]}, but get knocked back a little each time you shoot a ball",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#fff3e9",
+   "icon": "icons/pass_feather.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_reachersspear",
+   "kind": "passive",
+   "name": "Reacher's Spear",
+   "desc": "Increase crit chance to {[crit_chance]} when hitting enemies in the same column as you.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_reachersspear.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_refractingglass",
+   "kind": "passive",
+   "name": "Refracting Glass",
+   "desc": "After a special ball reaches its target position, spawn {[min_babies]} - {[max_babies]} baby balls from that position.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_refractingglass.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_rubberheadband",
+   "kind": "passive",
+   "name": "Rubber Headband",
+   "desc": "Balls start off at {[base_speed]} speed but increase by {[acceleration]} each bounce (max {[peak_speed]}).",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_rubberheadband.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_backstabdagger",
+   "kind": "passive",
+   "name": "Ruby Hilted Dagger",
+   "desc": "Increase crit chance to {[crit_chance]} when hitting enemies in the back.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_backstabdagger.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_rustedblade",
+   "kind": "passive",
+   "name": "Rusted Blade",
+   "desc": "Whenever bleed is applied, add {[bleed_amt]} extra stacks.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_rustedblade.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_leftstabdagger",
+   "kind": "passive",
+   "name": "Sapphire Hilted Dagger",
+   "desc": "Increase crit chance to {[crit_chance]} when hitting enemies on their left side.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_leftstabdagger.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_bow",
+   "kind": "passive",
+   "name": "Shortbow",
+   "desc": "Increase fire rate by {[fire_rate_pct]}",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#fff3e9",
+   "icon": "icons/pass_bow.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_silverblindfold",
+   "kind": "passive",
+   "name": "Silver Blindfold",
+   "desc": "Increase crit chance to {[crit_chance]} when hitting blinded enemies.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_silverblindfold.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_silverbullet",
+   "kind": "passive",
+   "name": "Silver Bullet",
+   "desc": "Balls deal {[damage_pct]} bonus damage until they hit a wall",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#aeb6b9",
+   "icon": "icons/pass_silverbullet.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_piercingrounds",
+   "kind": "passive",
+   "name": "Silver Revolver",
+   "desc": "Balls pierce and deal {[damage_pct]} extra damage to the first enemy they hit.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_piercingrounds.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_slingshot",
+   "kind": "passive",
+   "name": "Slingshot",
+   "desc": "{[baby_chance]} chance to launch a baby ball when you pick up a gem.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_slingshot.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_spikedcollar",
+   "kind": "passive",
+   "name": "Spiked Collar",
+   "desc": "Deal {[min_damage]}-{[max_damage]} to enemies the first time you get into their melee attack range.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_spikedcollar.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_discipline",
+   "kind": "passive",
+   "name": "Spiked Discipline",
+   "desc": "Each time a ball hits the bottom of the screen, it deals {[damage_pct]} extra damage on the next hit",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_discipline.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_bulwark",
+   "kind": "passive",
+   "name": "Steel Bulwark",
+   "desc": "Increase shield size by {[size_pct]}.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_bulwark.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_stoneeffigy",
+   "kind": "passive",
+   "name": "Stone Effigy",
+   "desc": "Every {[min_spawn_cycle]} - {[max_spawn_cycle]} rows, spawn a stone soldier with {[ally_health]} health on your side. Stone soldiers are immune to ball damage and move up the field, blocking and attacking enemies in the way.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_stoneeffigy.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_swordbreaker",
+   "kind": "passive",
+   "name": "Sword Breaker",
+   "desc": "Balls deal {[reduce_dmg_pct]} less damage, but gain {[damage_pct]} damage for each enemy on the field",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_swordbreaker.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_teardrop",
+   "kind": "passive",
+   "name": "Teardrop Necklace",
+   "desc": "Balls deal {[damage_pct]} more damage when on a return trajectory.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_teardrop.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_testtube",
+   "kind": "passive",
+   "name": "Test Tube",
+   "desc": "Balls deal more damage the faster they move (up to {[damage_pct]}).",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_testtube.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_traitorscowl",
+   "kind": "passive",
+   "name": "Traitor's Cowl",
+   "desc": "Stone allies can now be damaged by your balls, but you heal by {[heal_amt]} when a ball hits one.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_traitorscowl.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_turret",
+   "kind": "passive",
+   "name": "Turret",
+   "desc": "Floats around your character and shoots a baby ball at enemies every {[turret_cooldown]} seconds.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#6d6e79",
+   "icon": "icons/pass_turret.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_cradle",
+   "kind": "passive",
+   "name": "Unkempt Cradle",
+   "desc": "Shots made while characters are facing each other have a {[baby_chance]} chance to shoot an extra baby ball straight forward.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#2d90ff",
+   "icon": "icons/pass_cradle.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_upturnedhatchet",
+   "kind": "passive",
+   "name": "Upturned Hatchet",
+   "desc": "Balls deal {[damage_pct]} more damage after hitting the back of the field, otherwise damage is reduced by {[reduce_dmg_pct]}.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_upturnedhatchet.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_vampiricsword",
+   "kind": "passive",
+   "name": "Vampiric Sword",
+   "desc": "Each kill heals you by {[kill_heal]}. but each shot you take deals 2 damage to you.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#fff3e9",
+   "icon": "icons/pass_vampiricsword.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_voodoodoll",
+   "kind": "passive",
+   "name": "Voodoo Doll",
+   "desc": "Curse has a {[curse_kill_chance]} chance of killing enemies",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_voodoodoll.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_wagonwheel",
+   "kind": "passive",
+   "name": "Wagon Wheel",
+   "desc": "Each time a ball hits a wall, it deals {[damage_pct]} extra damage on the next hit",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_wagonwheel.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_addfollowerdamage",
+   "kind": "passive",
+   "name": "War Horn",
+   "desc": "All baby balls deal {[damage_pct]} more damage",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#ffff00",
+   "icon": "icons/pass_addfollowerdamage.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_wrappedexplosive",
+   "kind": "passive",
+   "name": "Wrapped Explosive",
+   "desc": "The first time balls hit a wall, they emit an explosion, dealing {[min_damage]} - {[max_damage]} to nearby enemies.",
+   "dlc": 1,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_wrappedexplosive.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_wretchedonion",
+   "kind": "passive",
+   "name": "Wretched Onion",
+   "desc": "Deal {[min_damage]}-{[max_damage]} per second to enemies within {[range]} tiles.",
+   "dlc": 0,
+   "tier": 0,
+   "color": "#0cff00",
+   "icon": "icons/pass_wretchedonion.png",
+   "recipes": []
+  },
+  {
+   "id": "pass_ardenttire",
+   "kind": "passive",
+   "name": "Ardent Tire",
+   "desc": "Each bounce increases ball speed by {[acceleration]} and damage by {[damage_pct]}",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_ardenttire.png",
+   "recipes": [
+    [
+     "pass_wagonwheel",
+     "pass_rubberheadband"
+    ]
+   ]
+  },
+  {
+   "id": "pass_argentstopwatch",
+   "kind": "passive",
+   "name": "Argent Stopwatch",
+   "desc": "Balls deal {[damage_pct]} damage, but damage decays by {[bonus_decay_pct]} each time they bounce (minimum {[min_damage_pct]}).",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_argentstopwatch.png",
+   "recipes": [
+    [
+     "pass_hourglass",
+     "pass_silverbullet"
+    ]
+   ]
+  },
+  {
+   "id": "pass_arrowoffate",
+   "kind": "passive",
+   "name": "Arrow of Fate",
+   "desc": "Projectiles no longer hurt you. Shoot {[min_babies]}-{[max_babies]} baby balls when hit by a projectile.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_arrowoffate.png",
+   "recipes": [
+    [
+     "pass_loversquiver",
+     "pass_handmirror"
+    ]
+   ]
+  },
+  {
+   "id": "pass_babyarmor",
+   "kind": "passive",
+   "name": "Baby Armor",
+   "desc": "Each shot, launch {[min_babies]} - {[max_babies]} baby balls with the properties of the ball being shot.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#a6b8cc",
+   "icon": "icons/pass_babyarmor.png",
+   "recipes": [
+    [
+     "pass_handmedowns",
+     "pass_irononesie"
+    ]
+   ]
+  },
+  {
+   "id": "pass_bloodkunai",
+   "kind": "passive",
+   "name": "Blood Kunai",
+   "desc": "Balls deal {[damage_pct_tenth]} of target's current health as bonus damage.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_bloodkunai.png",
+   "recipes": [
+    [
+     "pass_kunai",
+     "pass_overheal"
+    ]
+   ]
+  },
+  {
+   "id": "pass_chargedbow",
+   "kind": "passive",
+   "name": "Charged Bow",
+   "desc": "Area-of-effects trigger at the nearest enemy. Increase range of all ball area-of-effects by an extra {[range_pct]}. Increase fire rate by {[fire_rate_pct]}.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_chargedbow.png",
+   "recipes": [
+    [
+     "pass_chargedbracelet",
+     "pass_bow"
+    ]
+   ]
+  },
+  {
+   "id": "pass_cornucopia",
+   "kind": "passive",
+   "name": "Cornucopia",
+   "desc": "Each time baby balls are created, spawn {[min_babies]}-{[max_babies]} additional baby balls",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_cornucopia.png",
+   "recipes": [
+    [
+     "pass_babyrattle",
+     "pass_addfollowerdamage"
+    ]
+   ]
+  },
+  {
+   "id": "pass_cradleoffilth",
+   "kind": "passive",
+   "name": "Cradle of Filth",
+   "desc": "Shots made while characters are facing each other have a {[baby_chance]} chance to shoot an extra baby ball in a random direction.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_cradleoffilth.png",
+   "recipes": [
+    [
+     "pass_cradle",
+     "pass_babyrattle"
+    ]
+   ]
+  },
+  {
+   "id": "pass_deadeyesimpaler",
+   "kind": "passive",
+   "name": "Deadeye's Impaler",
+   "desc": "Increase critical hit chance to {[crit_chance]}. Critical hits instantly kill non-boss enemies.",
+   "dlc": 0,
+   "tier": 3,
+   "color": "#0cff00",
+   "icon": "icons/pass_deadeyesimpaler.png",
+   "recipes": [
+    [
+     "pass_deadeyescross",
+     "pass_graciousimpaler"
+    ]
+   ]
+  },
+  {
+   "id": "pass_eldritchdagger",
+   "kind": "passive",
+   "name": "Eldritch Dagger",
+   "desc": "First hit after hitting a right wall creates an explosion that deals {[min_aoe_damage]}-{[max_aoe_damage]} damage to nearby enemies.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_eldritchdagger.png",
+   "recipes": [
+    [
+     "pass_eldritchgauntlet",
+     "pass_frontstabdagger"
+    ]
+   ]
+  },
+  {
+   "id": "pass_blindspyglass",
+   "kind": "passive",
+   "name": "Eyeless Spyglass",
+   "desc": "Increase crit chance to {[crit_chance]} while you're looking backwards.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_blindspyglass.png",
+   "recipes": [
+    [
+     "pass_bentspyglass",
+     "pass_silverblindfold"
+    ]
+   ]
+  },
+  {
+   "id": "pass_fullmetalrapier",
+   "kind": "passive",
+   "name": "Full Metal Rapier",
+   "desc": "Balls deal {[damage_pct_tenth]} more damage for each baby ball and enemy on the field.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_fullmetalrapier.png",
+   "recipes": [
+    [
+     "pass_irononesie",
+     "pass_swordbreaker"
+    ]
+   ]
+  },
+  {
+   "id": "pass_graciousimpaler",
+   "kind": "passive",
+   "name": "Gracious Impaler",
+   "desc": "Critical hits have a {[crit_kill_chance]} chance to instantly kill enemies",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_graciousimpaler.png",
+   "recipes": [
+    [
+     "pass_reachersspear",
+     "pass_deadeyesamulet"
+    ]
+   ]
+  },
+  {
+   "id": "pass_artillery",
+   "kind": "passive",
+   "name": "Grotesque Artillery",
+   "desc": "Floats around your character and shoots a random level {[ball_lvl]} unevolved special ball at enemies every {[turret_cooldown]} seconds.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_artillery.png",
+   "recipes": [
+    [
+     "pass_turret",
+     "pass_handfan"
+    ]
+   ]
+  },
+  {
+   "id": "pass_handheldrupture",
+   "kind": "passive",
+   "name": "Handheld Rupture",
+   "desc": "Whenever a special ball warps, emit an earthquake that deals {[min_earthquake_damage]} - {[max_earthquake_damage]} damage to nearby enemies. Increase area-of-effect damage and status effect damage by {[damage_pct]}.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_handheldrupture.png",
+   "recipes": [
+    [
+     "pass_crackedcinderblock",
+     "pass_boulder"
+    ]
+   ]
+  },
+  {
+   "id": "pass_inglorioushammer",
+   "kind": "passive",
+   "name": "Inglorious Hammer",
+   "desc": "When balls hit a wall or the back of the field, they hit a random enemy with {[damage_pct]} bonus damage.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_inglorioushammer.png",
+   "recipes": [
+    [
+     "pass_platinumdumbbell",
+     "pass_upturnedhatchet"
+    ]
+   ]
+  },
+  {
+   "id": "pass_jugglerswheel",
+   "kind": "passive",
+   "name": "Juggler's Wheel",
+   "desc": "Balls deal an extra {[min_damage]} - {[max_damage]} damage to nearby enemies in a large area upon first landing.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_jugglerswheel.png",
+   "recipes": [
+    [
+     "pass_jugglersclub",
+     "pass_wagonwheel"
+    ]
+   ]
+  },
+  {
+   "id": "pass_levitatingrock",
+   "kind": "passive",
+   "name": "Levitating Rock",
+   "desc": "Increase area-of-effect damage (such as earthquake, laser, and lightning) and status effect damage (such as burn and poison) by {[damage_pct]}.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_levitatingrock.png",
+   "recipes": [
+    [
+     "pass_boulder",
+     "pass_magicstaff"
+    ]
+   ]
+  },
+  {
+   "id": "pass_liquidflame",
+   "kind": "passive",
+   "name": "Liquid Flame",
+   "desc": "Balls that hit flaming enemies light on fire and deal {[min_damage]}-{[max_damage]} bonus fire damage on the next hit. Orbiting balls are always on fire.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_liquidflame.png",
+   "recipes": [
+    [
+     "pass_decanter",
+     "pass_midnightoil"
+    ]
+   ]
+  },
+  {
+   "id": "pass_mysticladle",
+   "kind": "passive",
+   "name": "Mystic Dipper",
+   "desc": "Your combined ball has a {[birth_chance]} chance of birthing a copy of one of its components with each bounce. Increase area-of-effect damage by {[aoe_dmg_pct]}.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_mysticladle.png",
+   "recipes": [
+    [
+     "pass_ancientladle",
+     "pass_magicstaff"
+    ]
+   ]
+  },
+  {
+   "id": "pass_odiferousshell",
+   "kind": "passive",
+   "name": "Odiferous Shell",
+   "desc": "When you touch enemies, they have a {[touch_kill_chance]} chance of instantly dying.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_odiferousshell.png",
+   "recipes": [
+    [
+     "pass_wretchedonion",
+     "pass_armor"
+    ]
+   ]
+  },
+  {
+   "id": "pass_peacemaker",
+   "kind": "passive",
+   "name": "Peacemaker",
+   "desc": "Balls pierce and deal {[damage_pct]} extra damage to the first enemy they hit.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_peacemaker.png",
+   "recipes": [
+    [
+     "pass_piercingrounds",
+     "pass_silverbullet"
+    ]
+   ]
+  },
+  {
+   "id": "pass_phantomregalia",
+   "kind": "passive",
+   "name": "Phantom Regalia",
+   "desc": "Balls go through enemies until they hit the back wall. Balls deal {[damage_pct]} more damage when going through enemies.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_phantomregalia.png",
+   "recipes": [
+    [
+     "pass_ghostlycorset",
+     "pass_etherealcloak"
+    ]
+   ]
+  },
+  {
+   "id": "pass_reachersdrill",
+   "kind": "passive",
+   "name": "Reacher's Drill",
+   "desc": "After a ball loops around, increase its crit hit chance to {[crit_chance]}.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_reachersdrill.png",
+   "recipes": [
+    [
+     "pass_handdrill",
+     "pass_reachersspear"
+    ]
+   ]
+  },
+  {
+   "id": "pass_refractedecho",
+   "kind": "passive",
+   "name": "Refracted Echo",
+   "desc": "After a special ball reaches its target position, {[birth_chance]} chance to spawn a clone from that position.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_refractedecho.png",
+   "recipes": [
+    [
+     "pass_refractingglass",
+     "pass_dynamite"
+    ]
+   ]
+  },
+  {
+   "id": "pass_relentlesswhip",
+   "kind": "passive",
+   "name": "Relentless Whip",
+   "desc": "Each time a special ball hits the bottom of the screen, it launches {[min_babies]} - {[max_babies]} baby balls with its properties.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_relentlesswhip.png",
+   "recipes": [
+    [
+     "pass_discipline",
+     "pass_tornado"
+    ]
+   ]
+  },
+  {
+   "id": "pass_remotedetonator",
+   "kind": "passive",
+   "name": "Remote Detonator",
+   "desc": "Enemies spawn a level {[ball_lvl]} bomb ball upon dying.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_remotedetonator.png",
+   "recipes": [
+    [
+     "pass_corpseexplosion",
+     "pass_magnet"
+    ]
+   ]
+  },
+  {
+   "id": "pass_sandsoftime",
+   "kind": "passive",
+   "name": "Sands of Time",
+   "desc": "Balls deal more damage the faster they move (up to {[damage_pct]}).",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_sandsoftime.png",
+   "recipes": [
+    [
+     "pass_testtube",
+     "pass_hourglass"
+    ]
+   ]
+  },
+  {
+   "id": "pass_shadowblade",
+   "kind": "passive",
+   "name": "Shadow Blade",
+   "desc": "Increase crit chance to {[crit_chance]} when hitting enemies in the back.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_shadowblade.png",
+   "recipes": [
+    [
+     "pass_krisknife",
+     "pass_backstabdagger"
+    ]
+   ]
+  },
+  {
+   "id": "pass_soulreaver",
+   "kind": "passive",
+   "name": "Soul Reaver",
+   "desc": "Each kill heals you by {[kill_heal]} and you can heal past your max health at {[overheal_efficiency]} efficiency.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_soulreaver.png",
+   "recipes": [
+    [
+     "pass_vampiricsword",
+     "pass_overheal"
+    ]
+   ]
+  },
+  {
+   "id": "pass_spikedshield",
+   "kind": "passive",
+   "name": "Spiked Shield",
+   "desc": "Increase shield size by {[size_pct]}. Whenever you bounce a special ball, eject a spike at a random enemy that deals {[min_damage]}-{[max_damage]}.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_spikedshield.png",
+   "recipes": [
+    [
+     "pass_bulwark",
+     "pass_spikedcollar"
+    ]
+   ]
+  },
+  {
+   "id": "pass_teardropdagger",
+   "kind": "passive",
+   "name": "Teardrop Dagger",
+   "desc": "Balls deal {[damage_pct]} more damage and move {[base_speed]} faster when on a return trajectory.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_teardropdagger.png",
+   "recipes": [
+    [
+     "pass_teardrop",
+     "pass_leftstabdagger"
+    ]
+   ]
+  },
+  {
+   "id": "pass_tilteddagger",
+   "kind": "passive",
+   "name": "Tilted Dagger",
+   "desc": "When balls hit enemies on their right side, increase crit chance to {[crit_chance]} and bounce horizontally.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_tilteddagger.png",
+   "recipes": [
+    [
+     "pass_goniometer",
+     "pass_rightstabdagger"
+    ]
+   ]
+  },
+  {
+   "id": "pass_tormentersmask",
+   "kind": "passive",
+   "name": "Tormenters Mask",
+   "desc": "Enemies have a {[detect_kill_chance]} chance of dying immediately the first time they detect you.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_tormentersmask.png",
+   "recipes": [
+    [
+     "pass_spikedcollar",
+     "pass_thorns"
+    ]
+   ]
+  },
+  {
+   "id": "pass_vampireskiss",
+   "kind": "passive",
+   "name": "Vampire's Kiss",
+   "desc": "Whenever bleed is applied, add {[bleed_amt]} extra stacks. Dealing bleed damage has a {[lifesteal_chance]} chance of healing {[lifesteal_heal]} health.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_vampireskiss.png",
+   "recipes": [
+    [
+     "pass_rustedblade",
+     "pass_vampiricsword"
+    ]
+   ]
+  },
+  {
+   "id": "pass_volatileexplosive",
+   "kind": "passive",
+   "name": "Volatile Explosive",
+   "desc": "Enemies create a large explosion on death, dealing {[min_damage]}-{[max_damage]} damage to nearby enemies.",
+   "dlc": 1,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_volatileexplosive.png",
+   "recipes": [
+    [
+     "pass_wrappedexplosive",
+     "pass_corpseexplosion"
+    ]
+   ]
+  },
+  {
+   "id": "pass_windweaver",
+   "kind": "passive",
+   "name": "Windweaver",
+   "desc": "Shoot a level {[ball_lvl]} wind ball every time you pick up a gem.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_windweaver.png",
+   "recipes": [
+    [
+     "pass_tornado",
+     "pass_slingshot"
+    ]
+   ]
+  },
+  {
+   "id": "pass_anointedwings",
+   "kind": "passive",
+   "name": "Wings of the Anointed",
+   "desc": "Balls move {[base_speed]} faster and you move {[move_speed_pct]} faster. You no longer are affected by environmental hazards on the ground.",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_anointedwings.png",
+   "recipes": [
+    [
+     "pass_feather",
+     "pass_sneakers"
+    ]
+   ]
+  },
+  {
+   "id": "pass_deadeyescross",
+   "kind": "passive",
+   "name": "Deadeye's Cross",
+   "desc": "Increase critical hit chance to {[crit_chance]}",
+   "dlc": 0,
+   "tier": 1,
+   "color": "#0cff00",
+   "icon": "icons/pass_deadeyescross.png",
+   "recipes": [
+    [
+     "pass_backstabdagger",
+     "pass_frontstabdagger",
+     "pass_leftstabdagger",
+     "pass_rightstabdagger"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ball x Pit Evolutions</title>
+<meta name="description" content="Ball x Pit evolution legend and run planner: see which ball and passive evolutions your current slots can reach.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Ball x Pit <span>Evolutions</span></h1>
+    <span class="ver" id="ver"></span>
+  </div>
+  <nav class="tabs" role="tablist">
+    <a href="#run" data-tab="run" role="tab">Run planner</a>
+    <a href="#legend" data-tab="legend" role="tab">Legend</a>
+  </nav>
+</header>
+
+<main>
+  <!-- RUN PLANNER -->
+  <section id="view-run" class="view" hidden>
+    <div class="run-head">
+      <div class="slots-block">
+        <div class="slots-title">
+          <h2>Balls</h2>
+          <label class="mini">Slots
+            <select id="ballSlotCount"></select>
+          </label>
+        </div>
+        <div class="slots" id="ballSlots"></div>
+      </div>
+      <div class="slots-block">
+        <div class="slots-title">
+          <h2>Passives</h2>
+          <label class="mini">Slots
+            <select id="passiveSlotCount"></select>
+          </label>
+        </div>
+        <div class="slots" id="passiveSlots"></div>
+      </div>
+    </div>
+
+    <div class="run-bar">
+      <div class="run-msg" id="runMsg">Click a slot to add a ball or passive.</div>
+      <div class="run-opts">
+        <label class="chk"><input type="checkbox" id="optDlc" checked> Naturalist DLC</label>
+        <label class="chk" title="The game says fused balls can only be fused once. Turn this on if you want fused balls to still count toward evolutions."><input type="checkbox" id="optFusedEvolve"> Fused balls can evolve</label>
+        <button class="btn ghost" id="btnReset">Clear run</button>
+      </div>
+    </div>
+
+    <div class="evo-cols">
+      <div class="evo-col">
+        <h3>Ball evolutions</h3>
+        <div id="ballEvos"></div>
+      </div>
+      <div class="evo-col">
+        <h3>Passive evolutions</h3>
+        <div id="passiveEvos"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGEND -->
+  <section id="view-legend" class="view" hidden>
+    <div class="filters">
+      <input type="search" id="q" placeholder="Search a ball or passive…" autocomplete="off">
+      <div class="seg" id="kindSeg">
+        <button data-v="ball" class="on">Balls</button>
+        <button data-v="passive">Passives</button>
+      </div>
+      <div class="seg" id="groupSeg">
+        <button data-v="tier" class="on">By tier</button>
+        <button data-v="ingredient">By ingredient</button>
+        <button data-v="az">A–Z</button>
+      </div>
+      <label class="chk"><input type="checkbox" id="legDlc" checked> Naturalist DLC</label>
+    </div>
+    <div class="ingredients">
+      <div class="ing-label">Filter by ingredient <button class="link" id="ingClear" hidden>clear</button></div>
+      <div class="ing-strip" id="ingStrip"></div>
+    </div>
+    <div id="legend"></div>
+  </section>
+</main>
+
+<!-- picker -->
+<dialog id="picker">
+  <form method="dialog" class="pk-head">
+    <h2 id="pkTitle">Choose</h2>
+    <input type="search" id="pkQ" placeholder="Search…" autocomplete="off">
+    <button class="btn ghost" value="cancel" aria-label="Close">✕</button>
+  </form>
+  <div class="pk-body" id="pkBody"></div>
+</dialog>
+
+<!-- detail -->
+<dialog id="detail">
+  <form method="dialog"><button class="btn ghost close" value="x" aria-label="Close">✕</button></form>
+  <div id="detailBody"></div>
+</dialog>
+
+<footer>
+  Data and icons are extracted from the game files with <code>tools/extract.py</code>. BALL x PIT © Kenny Sun / Devolver Digital. Fan-made, not affiliated.
+</footer>
+
+<script src="data/data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
