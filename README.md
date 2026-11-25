@@ -13,7 +13,7 @@ A static GitHub Pages site for **BALL x PIT** with two views:
   - every base item you need to pick up (with ×2 when a target needs the same one twice),
   - which recipe to use for each evolution (automatic, or choose your own),
   - a step-by-step order of pickups and evolutions with your slots shown after each step, built so you use as few slots as possible at the busiest point. It warns you if that peak is more than your slot count, or if you'd need two copies of the same item at once.
-- **Legend** (`#legend`): every ball and passive evolution, grouped by tier, by ingredient, or A–Z. You can search, filter by ingredient, and hide the Naturalist DLC. Click any icon for its description, what it's made from and what it's used in.
+- **Legend** (`#legend`): every ball and passive evolution, grouped by tier, by ingredient, or A–Z. You can search, filter by ingredient, and hide the Risen Ballbylon DLC items. Click any icon for its description, what it's made from and what it's used in.
 
 The run is saved in your browser's localStorage.
 

@@ -202,7 +202,7 @@ def main():
             "kind": kind,
             "name": tt["Name"],
             "desc": tt["Desc"],
-            "dlc": tt.get("DLCVersion", 0),
+            "dlc": tt.get("DLCVersion", 0),  # 1 = Risen Ballbylon (paid DLC; icons named *pdlc1*)
             "order": order,
             "inGame": bool(tt["IsInGame"]),
             "color": color_hex(tt["BallColor"]) if "BallColor" in tt else (color_hex(tt["MainColor"]) if "MainColor" in tt else None),

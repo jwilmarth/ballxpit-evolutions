@@ -86,7 +86,7 @@
     $("#detailBody").innerHTML = `
       <div class="dt-head">${icon(id, "lg")}<div><h2>${esc(it.name)}</h2>
         <div style="display:flex;gap:6px;align-items:center;margin-top:4px">${tierBadge(it.tier)}
-        <span class="tier">${it.kind === "ball" ? "Ball" : "Passive"}</span>${it.dlc ? '<span class="badge-dlc">Naturalist DLC</span>' : ""}</div></div></div>
+        <span class="tier">${it.kind === "ball" ? "Ball" : "Passive"}</span>${it.dlc ? '<span class="badge-dlc">Risen Ballbylon DLC</span>' : ""}</div></div></div>
       <div class="dt-desc">${prettyDesc(it.desc)}</div>${made}${used}
       ${canAdd ? `<div class="dt-actions"><button class="btn" data-add="${esc(id)}">${currentView === "plan" ? "Add as target" : "Add to run"}</button></div>` : ""}`;
     const dlg = $("#detail");
@@ -222,7 +222,7 @@
     return `<div class="evo-card ${ready ? "ready" : ""} ${blocked ? "blocked" : ""}">
       ${icon(r.id, "", 'data-role="result"')}
       <div class="info">
-        <div class="nm"><span class="t">${esc(r.name)}</span>${tierBadge(r.tier)}${r.dlc ? '<span class="badge-dlc">DLC</span>' : ""}</div>
+        <div class="nm"><span class="t">${esc(r.name)}</span>${tierBadge(r.tier)}${r.dlc ? '<span class="badge-dlc" title="Risen Ballbylon DLC">DLC</span>' : ""}</div>
         ${formula(viable.map(v => v.parts), mark)}
         ${need ? `<div class="need">${esc(need)}</div>` : ""}
       </div>
@@ -524,7 +524,7 @@
     const recipes = r.recipes.filter(p => recipeDlcOk(p, leg.dlc));
     const mark = id => leg.ing === id ? "held" : "";
     return `<div class="leg-card">
-      <div class="res">${icon(r.id)}<span class="n">${esc(r.name)}</span>${r.dlc ? '<span class="badge-dlc">DLC</span>' : ""}</div>
+      <div class="res">${icon(r.id)}<span class="n">${esc(r.name)}</span>${r.dlc ? '<span class="badge-dlc" title="Risen Ballbylon DLC">DLC</span>' : ""}</div>
       <span class="eq">=</span>
       <div class="parts">${formula(recipes, mark)}</div></div>`;
   }
