@@ -160,21 +160,28 @@
         if (i === fuseFrom) cls += " selecting";
         else { const why = fuseCheck(fuseFrom, i); cls += why ? " fuse-bad" : " fuse-target"; title = why || "Fuse with this ball"; }
       }
-      let inner = "", name = "", acts = "";
+      let inner = "", name = "", acts = "", drag = "";
       if (s) {
         const its = s.ids.map(id => byId[id]);
         name = its.map(x => x.name).join(" + ");
-        title = s.fused ? `Fused: ${name}` : name;
-        inner = s.fused
-          ? `<div class="fuse-pair">${its.map(x => `<img src="${esc(x.icon)}" alt="">`).join("")}</div>`
-          : `<img src="${esc(its[0].icon)}" alt="">`;
+        if (s.fused) {
+          const lv = fuseLevels(s);
+          title = `Fused: ${its.map((x, k) => `${x.name} (Lv ${lv[k]})`).join(" + ")}`;
+          inner = `<div class="fuse-split">${its.map((x, k) => `<img class="half h${k}" src="${esc(x.icon)}" alt="">`).join("")}<span class="seam"></span></div>
+            ${DATA.ui?.fusion ? `<img class="fuse-badge" src="${esc(DATA.ui.fusion)}" alt="">` : ""}
+            <span class="lv">${lv[0]}·${lv[1]}</span>`;
+        } else {
+          title = name + (kind === "ball" ? " (drag onto another ball to fuse)" : "");
+          inner = `<img src="${esc(its[0].icon)}" alt="">`;
+        }
+        drag = s.fused ? "" : 'draggable="true"';
         acts = `<div class="acts">
           ${kind === "ball" && !s.fused ? `<button data-act="fuse" title="Fuse with another ball">⧉</button>` : ""}
-          ${s.fused ? `<button data-act="split" title="Undo fusion">↺</button>` : ""}
+          ${s.fused ? `<button data-act="edit" title="Edit fusion">✎</button>` : ""}
           <button data-act="info" title="Details">i</button>
           <button data-act="remove" title="Remove">✕</button></div>`;
       }
-      return `<div class="slot-wrap"><div class="${cls}" data-kind="${kind}" data-i="${i}" title="${esc(title)}" tabindex="0" role="button">${inner}${acts}${name ? `<span class="name">${esc(name)}</span>` : ""}</div></div>`;
+      return `<div class="slot-wrap"><div class="${cls}" data-kind="${kind}" data-i="${i}" title="${esc(title)}" tabindex="0" role="button" ${drag}>${inner}${acts}${name ? `<span class="name">${esc(name)}</span>` : ""}</div></div>`;
     }).join("");
   }
 
@@ -281,25 +288,122 @@
     const s = run[kind][i];
     if (kind === "ball" && fuseFrom !== null) {
       if (i === fuseFrom) { fuseFrom = null; renderRun(); return; }
-      const why = fuseCheck(fuseFrom, i);
-      if (why) { setMsg(why, "bad"); fuseFrom = null; renderRun(); return; }
-      const a = run.ball[fuseFrom], b = run.ball[i];
-      run.ball[fuseFrom] = { ids: [a.ids[0], b.ids[0]], fused: true };
-      run.ball[i] = null;
-      setMsg(`Fused ${byId[a.ids[0]].name} + ${byId[b.ids[0]].name}. That frees a slot.`);
-      fuseFrom = null; save(); renderRun(); return;
+      const from = fuseFrom;
+      fuseFrom = null;
+      doFuse(from, i);
+      return;
     }
     if (act === "remove") { run[kind][i] = null; setMsg(""); save(); renderRun(); return; }
     if (act === "info") { openDetail(s.ids[0]); return; }
     if (act === "fuse") { fuseFrom = i; renderRun(); return; }
-    if (act === "split") {
-      const j = run[kind].findIndex((x, k) => !x && k !== i);
-      run[kind][i] = { ids: [s.ids[0]] };
-      if (j >= 0) run[kind][j] = { ids: [s.ids[1]] };
-      setMsg(j >= 0 ? "Fusion undone." : `Fusion undone; no free slot, so ${byId[s.ids[1]].name} was dropped.`, j >= 0 ? "" : "warn");
-      save(); renderRun(); return;
-    }
+    if (act === "edit" || (s && s.fused && !act)) { openFuseEdit(i); return; }
     openPicker(kind, i);
+  }
+
+  const DEFAULT_FUSE_LV = 3; // fusion needs fully upgraded balls
+  const fuseLevels = s => (s.levels && s.levels.length === 2) ? s.levels : [DEFAULT_FUSE_LV, DEFAULT_FUSE_LV];
+
+  // fuse ball slot b into slot a (result lands in slot a)
+  function doFuse(a, b) {
+    const why = fuseCheck(a, b);
+    if (why) { setMsg(why, "bad"); renderRun(); return; }
+    const x = run.ball[a].ids[0], y = run.ball[b].ids[0];
+    run.ball[a] = { ids: [x, y], fused: true, levels: [DEFAULT_FUSE_LV, DEFAULT_FUSE_LV] };
+    run.ball[b] = null;
+    setMsg(`Fused ${byId[x].name} + ${byId[y].name}. That frees a slot.`);
+    save(); renderRun();
+  }
+
+  function unfuse(i) {
+    const s = run.ball[i];
+    const j = run.ball.findIndex((x, k) => !x && k !== i);
+    run.ball[i] = { ids: [s.ids[0]] };
+    if (j >= 0) run.ball[j] = { ids: [s.ids[1]] };
+    setMsg(j >= 0 ? "Unfused." : `Unfused; no free slot, so ${byId[s.ids[1]].name} was dropped.`, j >= 0 ? "" : "warn");
+    save(); renderRun();
+  }
+
+  // ---------- fusion editor ----------
+  let fuseEditIdx = null;
+  function openFuseEdit(i) {
+    const s = run.ball[i];
+    if (!s || !s.fused) return;
+    fuseEditIdx = i;
+    const lv = fuseLevels(s);
+    $("#fuseEditBody").innerHTML = s.ids.map((id, k) => `
+      <div class="fe-row">${icon(id)}<span class="fe-name">${esc(byId[id].name)}</span>
+        <span class="mini">Level when fused</span>
+        <span class="stepper">
+          <button type="button" data-step="-1" data-k="${k}" aria-label="Lower level" ${lv[k] <= 1 ? "disabled" : ""}>−</button>
+          <span class="val" data-val="${k}">${lv[k]}</span>
+          <button type="button" data-step="1" data-k="${k}" aria-label="Raise level" ${lv[k] >= 10 ? "disabled" : ""}>+</button>
+        </span></div>`).join("") +
+      `<p class="fe-note">Fusing needs fully upgraded balls, so this starts at level ${DEFAULT_FUSE_LV}. Some upgrades raise the max level of fused balls. The level will feed the DPS calculator later.</p>`;
+    $("#fuseEdit").showModal();
+  }
+  $("#fuseEdit").addEventListener("click", e => {
+    if (e.target === e.currentTarget) return e.currentTarget.close();
+    const step = e.target.closest("[data-step]");
+    if (step && fuseEditIdx !== null) {
+      const s = run.ball[fuseEditIdx];
+      const k = +step.dataset.k;
+      const lv = [...fuseLevels(s)];
+      lv[k] = Math.min(10, Math.max(1, lv[k] + +step.dataset.step));
+      s.levels = lv;
+      const row = step.closest(".stepper");
+      row.querySelector(".val").textContent = lv[k];
+      row.querySelector('[data-step="-1"]').disabled = lv[k] <= 1;
+      row.querySelector('[data-step="1"]').disabled = lv[k] >= 10;
+      save(); renderSlots("ball");
+      return;
+    }
+    if (e.target.closest("#feUnfuse")) { const i = fuseEditIdx; e.currentTarget.close(); unfuse(i); }
+  });
+  $("#fuseEdit").addEventListener("close", () => { fuseEditIdx = null; });
+
+  // ---------- drag and drop ----------
+  // ball onto ball = fuse; anything onto an empty slot of the same kind = move
+  let dragFrom = null;
+  const dropOk = (kind, to) => {
+    if (!dragFrom || dragFrom.kind !== kind || dragFrom.i === to) return "";
+    if (!run[kind][to]) return "move";
+    if (kind === "ball" && !fuseCheck(dragFrom.i, to)) return "fuse";
+    return "";
+  };
+  for (const sel of ["#ballSlots", "#passiveSlots"]) {
+    const host = $(sel);
+    host.addEventListener("dragstart", e => {
+      const slot = e.target.closest(".slot.filled"); if (!slot) return;
+      dragFrom = { kind: slot.dataset.kind, i: +slot.dataset.i };
+      e.dataTransfer.effectAllowed = "move";
+      e.dataTransfer.setData("text/plain", run[dragFrom.kind][dragFrom.i].ids[0]);
+      slot.classList.add("dragging");
+      // mark targets
+      host.querySelectorAll(".slot").forEach(el => {
+        const k = +el.dataset.i;
+        if (k === dragFrom.i) return;
+        const ok = dropOk(dragFrom.kind, k);
+        el.classList.add(ok ? "drop-ok" : "drop-bad");
+        if (!ok && el.classList.contains("filled") && dragFrom.kind === "ball") el.title = fuseCheck(dragFrom.i, k);
+      });
+    });
+    host.addEventListener("dragover", e => {
+      const slot = e.target.closest(".slot"); if (!slot || !dragFrom) return;
+      if (dropOk(slot.dataset.kind, +slot.dataset.i)) { e.preventDefault(); e.dataTransfer.dropEffect = "move"; slot.classList.add("drop-hover"); }
+    });
+    host.addEventListener("dragleave", e => {
+      const slot = e.target.closest(".slot"); if (slot && !slot.contains(e.relatedTarget)) slot.classList.remove("drop-hover");
+    });
+    host.addEventListener("drop", e => {
+      const slot = e.target.closest(".slot"); if (!slot || !dragFrom) return;
+      e.preventDefault();
+      const kind = slot.dataset.kind, to = +slot.dataset.i, from = dragFrom.i;
+      const how = dropOk(kind, to);
+      dragFrom = null;
+      if (how === "move") { run[kind][to] = run[kind][from]; run[kind][from] = null; setMsg(""); save(); renderRun(); }
+      else if (how === "fuse") doFuse(to, from);
+    });
+    host.addEventListener("dragend", () => { dragFrom = null; renderSlots(sel === "#ballSlots" ? "ball" : "passive"); });
   }
 
   for (const sel of ["#ballSlots", "#passiveSlots"]) {
@@ -312,7 +416,7 @@
       if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("slot")) {
         e.preventDefault(); slotClick(e.target.dataset.kind, +e.target.dataset.i);
       }
-      if ((e.key === "Delete" || e.key === "Backspace") && e.target.classList.contains("slot")) {
+      if ((e.key === "Delete" || e.key === "Backspace") && e.target.classList.contains("slot") && run[e.target.dataset.kind][+e.target.dataset.i]) {
         slotClick(e.target.dataset.kind, +e.target.dataset.i, "remove");
       }
     });

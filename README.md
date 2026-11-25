@@ -6,7 +6,9 @@ A static GitHub Pages site for **BALL x PIT** with two views:
   - **Ready to evolve**: every part is in your slots. Hit **Evolve** to swap the parts for the result.
   - **One away**: click the dimmed part to add it to a free slot.
   - **Further away**: evolutions that need two or more parts you don't have yet.
-  - **Fuse** (⧉ on a ball slot) merges two balls into one slot, using the game's rules: you can't fuse the same ball twice, a ball can only be fused once, and you can't fuse two balls that already form an evolution. Fused balls are left out of evolutions unless you turn on "Fused balls can evolve".
+  - **Fuse**: drag a ball onto another ball, or use ⧉ on touch screens. This merges two balls into one slot, using the game's rules: you can't fuse the same ball twice, a ball can only be fused once, and you can't fuse two balls that already form an evolution. Fused balls are left out of evolutions unless you turn on "Fused balls can evolve". You can also drag any item onto an empty slot to move it.
+  - **Edit a fusion** (✎, or click the fused slot): set the level each ball was at when fused (starts at 3, for the future DPS calculator), or **Unfuse** it to try a different pairing. The game can't unfuse; this is for planning.
+  - The game draws fused balls at runtime, so the site builds the look itself: half of each ball's icon, split down the middle.
 - **Plan** (`#plan`): pick the balls and passives you want to end the run with. It works out:
   - every base item you need to pick up (with ×2 when a target needs the same one twice),
   - which recipe to use for each evolution (automatic, or choose your own),

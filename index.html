@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <header class="top">
@@ -137,6 +137,23 @@
   <div class="pk-body" id="pkBody"></div>
 </dialog>
 
+<!-- fusion editor -->
+<dialog id="fuseEdit">
+  <form method="dialog" class="pk-head">
+    <h2>Edit fusion</h2>
+    <span style="flex:1"></span>
+    <button class="btn ghost" value="x" aria-label="Close">✕</button>
+  </form>
+  <div class="fe-body">
+    <div id="fuseEditBody"></div>
+    <div class="dt-actions">
+      <button class="btn ghost" id="feUnfuse" type="button" title="Split back into two balls (for planning; the game can't do this)">Unfuse</button>
+      <span style="flex:1"></span>
+      <form method="dialog"><button class="btn" value="ok">Done</button></form>
+    </div>
+  </div>
+</dialog>
+
 <!-- detail -->
 <dialog id="detail">
   <form method="dialog"><button class="btn ghost close" value="x" aria-label="Close">✕</button></form>
@@ -147,7 +164,7 @@
   Data and icons are extracted from the game files with <code>tools/extract.py</code>. BALL x PIT © Kenny Sun / Devolver Digital. Fan-made, not affiliated.
 </footer>
 
-<script src="data/data.js?v=2"></script>
-<script src="app.js?v=2"></script>
+<script src="data/data.js?v=4"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

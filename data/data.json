@@ -1,5 +1,8 @@
 {
  "gameVersion": "1.308",
+ "ui": {
+  "fusion": "icons/ui_fusion.png"
+ },
  "items": [
   {
    "id": "hupg_beast",

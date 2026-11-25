@@ -283,8 +283,24 @@ def main():
             "recipes": r["recipes"],
         })
 
+    # UI sprites used by the site
+    ui_wanted = {"icon_fusion": "fusion"}
+    ui = {}
+    for obj in env.objects:
+        if obj.type.name != "Sprite" or len(ui) == len(ui_wanted):
+            continue
+        try:
+            name = obj.peek_name()
+        except Exception:
+            continue
+        if name in ui_wanted and ui_wanted[name] not in ui:
+            path = "icons/ui_%s.png" % ui_wanted[name]
+            obj.read().image.save(os.path.join(ROOT, path))
+            ui[ui_wanted[name]] = path
+
     data = {
         "gameVersion": game_version(data_dir),
+        "ui": ui,
         "items": result,
     }
     os.makedirs(os.path.join(ROOT, "data"), exist_ok=True)
